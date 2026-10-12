@@ -235,6 +235,7 @@ footer small{flex-basis:100%;font-size:.92rem}
   .find-grid figcaption{font-size:.95rem;align-items:flex-start}
 }
 @media (max-width:560px){
+  .sign{display:inline-grid;justify-items:center;row-gap:.02em;text-align:center;font-size:clamp(2.6rem,15.5vw,4.4rem);padding:.14em .4em .18em}
   .svc-grid{grid-template-columns:1fr}
   .nav .btn span{display:none}
   .nav .btn{width:44px;padding:0}
