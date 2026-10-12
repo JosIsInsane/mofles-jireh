@@ -31,6 +31,34 @@
     new IntersectionObserver(function (e) { wf.classList.toggle('off', e[0].isIntersecting); }, { threshold: 0.15 }).observe(hero);
   } else if (wf) { wf.classList.remove('off'); }
 
+  /* ---------- Video de llegada: se reproduce solo cuando está a la vista ---------- */
+  var lv = $('llegadaVideo');
+  if (lv && !menosMov && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { lv.preload = 'auto'; var q = lv.play(); if (q && q.catch) q.catch(function () {}); }
+      else if (!lv.paused) lv.pause();
+    }, { threshold: 0.5 }).observe(lv);
+  }
+
+  /* ---------- Menú: marca la sección en la que estás ---------- */
+  var links = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (links.length && 'IntersectionObserver' in window) {
+    var mapa = {};
+    links.forEach(function (a) { var sec = document.querySelector(a.getAttribute('href')); if (sec) mapa[sec.id] = a; });
+    var obs = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!mapa[e.target.id]) return;
+        if (e.isIntersecting) {
+          links.forEach(function (a) { a.classList.remove('activo'); a.removeAttribute('aria-current'); });
+          mapa[e.target.id].classList.add('activo'); mapa[e.target.id].setAttribute('aria-current', 'true');
+        } else {
+          mapa[e.target.id].classList.remove('activo'); mapa[e.target.id].removeAttribute('aria-current');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(mapa).forEach(function (id) { obs.observe(document.getElementById(id)); });
+  }
+
   /* ---------- Galería ---------- */
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var datos = (window.TRABAJOS || []).filter(function (t) { return t && t.foto; });

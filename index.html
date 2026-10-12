@@ -42,7 +42,7 @@
     <nav class="nav-links" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#trabajos">Trabajos</a>
-      <a href="#visitanos">Ubicación</a>
+      <a href="#visitanos">Cómo llegar</a>
       <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg><span>WhatsApp</span></a>
     </nav>
   </div>
@@ -105,6 +105,21 @@
     </div>
   </section>
 
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section class="sec" id="proceso">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Cómo funciona</p>
+        <h2>De la foto al carro listo</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Mándanos foto o video</h3><p>Por WhatsApp, del ruido, la fuga o la pieza dañada.</p></li>
+        <li><h3>Te damos precio y opciones</h3><p>Te decimos si conviene reparar o cambiar, según tu presupuesto.</p></li>
+        <li><h3>Traes tu carro al taller</h3><p>Lunes a sábado, de 7:00 a.m. a 5:00 p.m.</p></li>
+      </ol>
+    </div>
+  </section>
+
   <!-- ============ TRABAJOS (se llenan desde trabajos.js) ============ -->
   <section class="sec work" id="trabajos">
     <div class="wrap">
@@ -123,23 +138,29 @@
     </div>
   </section>
 
-  <!-- ============ CÓMO FUNCIONA ============ -->
-  <section class="sec" id="proceso">
+  <!-- ============ CÓMO LLEGAR ============ -->
+  <section class="sec find" id="visitanos">
     <div class="wrap">
       <div class="sec-head">
-        <p class="label">Cómo funciona</p>
-        <h2>De la foto al carro listo</h2>
+        <p class="label">Cómo llegar</p>
+        <h2>Así nos encuentras</h2>
+        <p>Estamos sobre la Avenida Juan Pablo II, frente a Panadería PANIFER. Busca el rótulo amarillo de <strong>SILENCIADORES</strong> y los mofles exhibidos en la acera.</p>
       </div>
-      <ol class="steps">
-        <li><h3>Mándanos foto o video</h3><p>Por WhatsApp, del ruido, la fuga o la pieza dañada.</p></li>
-        <li><h3>Te damos precio y opciones</h3><p>Te decimos si conviene reparar o cambiar, según tu presupuesto.</p></li>
-        <li><h3>Traes tu carro al taller</h3><p>Lunes a sábado, de 7:00 a.m. a 5:00 p.m.</p></li>
-      </ol>
+      <div class="find-grid">
+        <figure class="find-video">
+          <video id="llegadaVideo" muted loop playsinline controls preload="none" poster="img/taller/llegada-portada.jpg" aria-label="Video llegando al taller desde la avenida">
+            <source src="img/taller/llegada.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="find-n">1</span> Desde la avenida, busca los conos y el rótulo de Mofles Jireh</figcaption>
+        </figure>
+        <figure class="find-photo"><img src="img/taller/fachada-acera.webp" alt="Mofles exhibidos en bases amarillas sobre la acera, con el rótulo Mofles Jireh Estamos en servicio" loading="lazy" width="680" height="510"><figcaption><span class="find-n">2</span> Los mofles en la acera</figcaption></figure>
+        <figure class="find-photo"><img src="img/taller/rotulo-taller.webp" alt="Rótulo amarillo Mofles Jireh en la entrada del taller" loading="lazy" width="680" height="510"><figcaption><span class="find-n">3</span> El rótulo en la entrada</figcaption></figure>
+        <figure class="find-photo"><img src="img/taller/interior-taller.webp" alt="Interior del taller con rampas amarillas para subir los carros" loading="lazy" width="680" height="510"><figcaption><span class="find-n">4</span> Entras con tu carro a las rampas</figcaption></figure>
+      </div>
     </div>
   </section>
 
-  <!-- ============ UBICACIÓN ============ -->
-  <section class="lamina" id="visitanos">
+  <section class="lamina" id="ubicacion">
     <div class="wrap visit-grid">
       <div class="visit-info">
         <p class="label">Visítanos</p>
@@ -150,13 +171,12 @@
           <li><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg><div><strong>WhatsApp y llamadas</strong><a href="tel:+50495494420">9549-4420</a></div></li>
         </ul>
         <div class="visit-ctas">
-          <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&query=Panader%C3%ADa%20Panifer%2C%20Avenida%20Juan%20Pablo%20II%2C%20San%20Pedro%20Sula" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M512 96c0 50.2-59.1 125.1-84.6 155c-3.8 4.4-9.4 6.1-14.5 5H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c53 0 96 43 96 96s-43 96-96 96H139.6c8.7-9.9 19.3-22.6 30-36.8c6.3-8.4 12.8-17.6 19-27.2H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320c-53 0-96-43-96-96s43-96 96-96h39.8c-21-31.5-39.8-67.7-39.8-96c0-53 43-96 96-96s96 43 96 96zM117.1 489.1c-3.8 4.3-7.2 8.1-10.1 11.3l-1.8 2-.2-.2c-6 4.6-14.6 4-20-1.8C59.8 473 0 402.5 0 352c0-53 43-96 96-96s96 43 96 96c0 30-21.1 67-43.5 97.9c-10.7 14.7-21.7 28-30.8 38.5l-.6 .7zM128 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM416 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg> Abrir en Google Maps</a>
+          <a class="btn btn-ink" href="https://share.google/jwrLP9QqdyHwowMaO" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M512 96c0 50.2-59.1 125.1-84.6 155c-3.8 4.4-9.4 6.1-14.5 5H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c53 0 96 43 96 96s-43 96-96 96H139.6c8.7-9.9 19.3-22.6 30-36.8c6.3-8.4 12.8-17.6 19-27.2H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320c-53 0-96-43-96-96s43-96 96-96h39.8c-21-31.5-39.8-67.7-39.8-96c0-53 43-96 96-96s96 43 96 96zM117.1 489.1c-3.8 4.3-7.2 8.1-10.1 11.3l-1.8 2-.2-.2c-6 4.6-14.6 4-20-1.8C59.8 473 0 402.5 0 352c0-53 43-96 96-96s96 43 96 96c0 30-21.1 67-43.5 97.9c-10.7 14.7-21.7 28-30.8 38.5l-.6 .7zM128 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM416 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg> Abrir en Google Maps</a>
           <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Escribir</a>
         </div>
       </div>
       <div class="map">
-        <iframe src="https://www.google.com/maps?q=Panader%C3%ADa%20Panifer%2C%20Avenida%20Juan%20Pablo%20II%2C%20San%20Pedro%20Sula&z=16&output=embed" title="Mapa de Mofles Jireh" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <span class="map-pin">Frente a Panadería PANIFER</span>
+        <iframe src="https://www.google.com/maps?q=Mofles%20Jireh%2C%20Avenida%20Juan%20Pablo%20II%2C%20San%20Pedro%20Sula&z=17&output=embed" title="Mapa de Mofles Jireh" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>

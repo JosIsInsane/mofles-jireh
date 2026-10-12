@@ -171,7 +171,20 @@ button{font:inherit;color:inherit}
 .visit-ctas{display:flex;flex-wrap:wrap;gap:.8rem}
 .map{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--ink);border:4px solid var(--ink);aspect-ratio:4/3;max-width:100%}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.map-pin{position:absolute;left:12px;bottom:12px;background:var(--ink);color:var(--white);font-family:var(--f-label);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;padding:.35rem .7rem;border-radius:4px;pointer-events:none}
+
+
+/* ---------- CÓMO LLEGAR ---------- */
+.find{background:var(--white)}
+.find .sec-head strong{color:var(--ink)}
+.find-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.find-grid figure{margin:0;display:grid;gap:.6rem;align-content:start;min-width:0}
+.find-grid img,.find-grid video{width:100%;height:auto;border-radius:var(--radius);background:var(--ink);object-fit:cover}
+.find-photo img{aspect-ratio:4/3}
+.find-video{grid-column:1/-1}
+.find-video video{aspect-ratio:21/9}
+.find-grid figcaption{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:1rem;line-height:1.35}
+.find-n{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--yellow);display:inline-flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:.9rem;font-variant-numeric:tabular-nums}
+.nav-links a.activo{color:var(--white);box-shadow:inset 0 -3px 0 var(--yellow)}
 
 /* ---------- FOOTER ---------- */
 footer{background:var(--ink);color:var(--muted-d)}
@@ -215,6 +228,11 @@ footer small{flex-basis:100%;font-size:.92rem}
   .filters{flex-wrap:nowrap;overflow-x:auto;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);scrollbar-width:none}
   .filters::-webkit-scrollbar{display:none}
   .chip{flex-shrink:0}
+  .find-video video{aspect-ratio:16/9}
+  .find-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .find-photo:last-child{grid-column:1/-1}
+  .find-photo:last-child img{aspect-ratio:16/9}
+  .find-grid figcaption{font-size:.95rem;align-items:flex-start}
 }
 @media (max-width:560px){
   .svc-grid{grid-template-columns:1fr}
