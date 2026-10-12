@@ -11,7 +11,8 @@
   --ink-2:#231D17;
   --ink-3:#3A3229;
   --red:#C8231B;         /* rojo JIREH (texto sobre claro) */
-  --red-l:#FF5A4E;       /* rojo para texto sobre negro */
+  --red-l:#FF5A4E;
+  --red-sign:#A51B14;   /* rojo del rótulo sobre amarillo (contraste 3.3:1, texto grande) */       /* rojo para texto sobre negro */
   --white:#FFFFFF;
   --sand:#F5F1EA;
   --line:#E3DCD1;
@@ -87,15 +88,15 @@ button{font:inherit;color:inherit}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,19,15,.94) 0%,rgba(23,19,15,.8) 42%,rgba(23,19,15,.25) 100%)}
 .hero-inner{padding-block:clamp(3.5rem,9vw,7.5rem) clamp(3rem,7vw,6rem);display:grid;gap:1.5rem;justify-items:start}
-.blessing{display:inline-flex;align-items:center;gap:.55rem;border:2px solid var(--yellow);color:var(--white);font-family:var(--f-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .95rem;border-radius:100px;font-size:.95rem;background:rgba(23,19,15,.55)}
-.blessing::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red-l)}
-.hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(2.7rem,7.8vw,5.8rem);max-width:12ch;letter-spacing:.005em}
-.hero h1 span{color:var(--yellow)}
+/* El título imita el rótulo pintado del taller: placa amarilla, MOFLES en negro, JIREH en rojo */
+.hero-title{display:grid;gap:1.1rem;justify-items:start}
+.sign{display:inline-flex;flex-wrap:wrap;column-gap:.32em;padding:.16em .34em .2em;background:var(--yellow);border-radius:4px;box-shadow:0 0 0 3px var(--ink),0 14px 34px rgba(0,0,0,.45);font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,9.5vw,6.6rem);line-height:.95;letter-spacing:.01em;transform:rotate(-1.2deg);transform-origin:left bottom}
+.slogan{margin-top:-.4rem;display:inline-block;background:var(--ink);color:var(--white);border:2px solid var(--yellow);border-radius:100px;padding:.3rem .95rem;font-family:var(--f-label);font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase}
+.sign-a{color:var(--ink)}
+.sign-b{color:var(--red-sign)}
+.hero-sub{font-family:var(--f-display);font-weight:400;font-size:clamp(1.45rem,3.2vw,2.15rem);line-height:1.15;max-width:22ch;color:var(--white)}
 .hero .lead{font-size:clamp(1.12rem,2.2vw,1.32rem);max-width:42ch;color:#EDE6DC}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.3rem}
-.hero-tags{list-style:none;margin:.6rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;font-family:var(--f-label);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.95rem;color:var(--muted-d)}
-.hero-tags li{display:inline-flex;align-items:center;gap:.5rem}
-.hero-tags li+li::before{content:"";width:5px;height:5px;background:var(--yellow);transform:rotate(45deg);margin-right:.6rem}
 
 /* ---------- BANDA DE LÁMINA ---------- */
 .lamina{background-color:var(--yellow);background-image:repeating-linear-gradient(90deg,transparent 0 22px,rgba(0,0,0,.07) 22px 26px,rgba(255,255,255,.09) 26px 30px,transparent 30px 48px);color:var(--ink)}
@@ -114,9 +115,8 @@ button{font:inherit;color:inherit}
 
 /* ---------- SERVICIOS ---------- */
 .services{background:var(--white)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.svc{display:grid;grid-template-columns:48px 1fr;gap:.25rem 1rem;align-content:start;padding:1.35rem 1.3rem 1.4rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);transition:border-color .15s ease,box-shadow .15s ease}
-.svc:hover{border-color:var(--yellow);box-shadow:0 6px 18px rgba(23,19,15,.07)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.2rem 2.6rem}
+.svc{display:grid;grid-template-columns:48px 1fr;gap:.25rem 1rem;align-content:start}
 .svc-ico{grid-row:span 2;width:48px;height:48px;border-radius:var(--radius);background:var(--yellow);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.35rem}
 .svc h3{font-family:var(--f-body);font-weight:700;font-size:1.18rem;line-height:1.25;padding-top:.1rem}
 .svc p{color:var(--muted);font-size:1rem;line-height:1.5}
