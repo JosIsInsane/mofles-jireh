@@ -9,6 +9,7 @@ Página del taller Mofles Jireh (San Pedro Sula). Es una página estática: solo
 | `trabajos.js` | **La galería de trabajos.** Aquí se agregan, quitan o reemplazan fotos y videos. |
 | `trabajos/` | Las fotos y videos de la galería. |
 | `index.html` | Los textos de la página: servicios, horario, dirección, teléfono. |
+| `resenas.js` | Las reseñas de clientes que salen en la sección "Reseñas". |
 | `css/estilos.css` | Colores, letras y diseño. Los colores están arriba del todo. |
 | `js/app.js` | El funcionamiento de la galería, el visor y los filtros. Normalmente no se toca. |
 | `img/` | Logo, portada del video de inicio e imagen para compartir en redes. |
@@ -39,6 +40,16 @@ Página del taller Mofles Jireh (San Pedro Sula). Es una página estática: solo
 **Quitar un trabajo:** borra su línea completa. **Reemplazar:** sube la foto nueva y cambia la ruta en su línea.
 
 > Si la galería sale vacía después de editar, casi siempre falta una coma, una comilla o una llave `}`. Revisa la última línea que cambiaste.
+
+## Agregar reseñas de clientes
+
+Abre `resenas.js`, toca el lápiz ✏️ y agrega una línea por reseña (copia las reales de Google Maps o Facebook):
+
+```js
+{ texto: "Me repararon el mofle en vez de cambiarlo.", nombre: "Carlos M.", estrellas: 5, fuente: "Google" },
+```
+
+Mientras la lista esté vacía, la sección solo muestra los botones para dejar una reseña.
 
 ## Cambiar textos, horario o teléfono
 

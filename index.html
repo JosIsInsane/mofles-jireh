@@ -6,7 +6,7 @@
 <title>Mofles Jireh · Taller de mofles en San Pedro Sula</title>
 <meta name="description" content="Mofles Jireh, taller de mofles en San Pedro Sula. Cambio y reparación de mofles, flexibles, resonadores, bazucas, manifolds, hules, soportes y modificaciones del escape. Lunes a sábado de 7 a.m. a 5 p.m.">
 <link rel="canonical" href="https://moflesjireh.com/">
-<meta name="theme-color" content="#17130F">
+<meta name="theme-color" content="#12100D">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://moflesjireh.com/">
 <meta property="og:locale" content="es_HN">
@@ -19,7 +19,8 @@
 <link rel="apple-touch-icon" href="img/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="trabajos/mofle-nuevo-chispas.webp">
 <link rel="stylesheet" href="css/estilos.css">
 <script type="application/ld+json">
 {
@@ -40,82 +41,126 @@
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 
-<header class="nav">
-  <div class="wrap">
+<!-- Íconos: se dibujan una vez aquí y se usan con <use href="#i-..."> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 512 512"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 512 512"><path d="M512 96c0 50.2-59.1 125.1-84.6 155c-3.8 4.4-9.4 6.1-14.5 5H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c53 0 96 43 96 96s-43 96-96 96H139.6c8.7-9.9 19.3-22.6 30-36.8c6.3-8.4 12.8-17.6 19-27.2H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320c-53 0-96-43-96-96s43-96 96-96h39.8c-21-31.5-39.8-67.7-39.8-96c0-53 43-96 96-96s96 43 96 96zM117.1 489.1c-3.8 4.3-7.2 8.1-10.1 11.3l-1.8 2-.2-.2c-6 4.6-14.6 4-20-1.8C59.8 473 0 402.5 0 352c0-53 43-96 96-96s96 43 96 96c0 30-21.1 67-43.5 97.9c-10.7 14.7-21.7 28-30.8 38.5l-.6 .7zM128 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM416 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
     <a class="brand" href="#inicio" aria-label="Mofles Jireh, ir al inicio">
-      <img src="img/logo-180.png" alt="" width="42" height="42">
-      <span class="wordmark"><b>MOFLES</b> <i>JIREH</i></span>
+      <img src="img/logo-180.png" alt="Logo de Mofles Jireh" width="52" height="52">
+      <span class="wordmark">MOFLES <b>JIREH</b></span>
     </a>
-    <nav class="nav-links" aria-label="Principal">
+    <nav class="nav-links" id="menu" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#trabajos">Trabajos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#resenas">Reseñas</a>
       <a href="#visitanos">Cómo llegar</a>
-      <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg><span>WhatsApp</span></a>
     </nav>
+    <div class="nav-actions">
+      <a class="icon-btn hide-sm" href="tel:+50495494420" aria-label="Llamar al 9549-4420"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg></a>
+      <a class="nav-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
 <main id="main">
   <!-- ============ INICIO ============ -->
   <section class="hero" id="inicio">
-    <div class="hero-media" aria-hidden="true">
-      <img src="img/hero-poster.jpg" alt="">
-      <video id="heroVideo" muted loop playsinline preload="none" poster="img/hero-poster.jpg" tabindex="-1">
-        <source src="video/hero.mp4" type="video/mp4">
-      </video>
+    <div class="hero-in">
+      <div class="hero-copy">
+        <h1>
+          <span class="eyebrow">Mofles, escapes y manifolds · San Pedro Sula</span>
+          <span class="display">Que tu carro <em>suene</em> como debe.</span>
+        </h1>
+        <p class="lead">Reparamos, cambiamos y fabricamos todo el sistema de escape, con opciones según tu presupuesto. ¡Una bendición para tu auto!</p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Cotizar por WhatsApp</a>
+          <a class="btn btn-line" href="#visitanos"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Cómo llegar</a>
+        </div>
+        <p class="hero-call">¿Prefieres llamar? <a href="tel:+50495494420">9549-4420</a></p>
+      </div>
+
+      <figure class="hero-art">
+        <div class="arch">
+          <img src="trabajos/mofle-nuevo-chispas.webp" alt="Soldando un mofle nuevo debajo de un carro en el taller, con chispas" width="1280" height="960" fetchpriority="high">
+        </div>
+        <div class="status" id="estado" aria-live="polite">
+          <span class="dot"></span>
+          <span><strong id="estadoTxt">Lunes a sábado</strong><small id="estadoSub">7:00 a.m. – 5:00 p.m.</small></span>
+        </div>
+        <div class="seal" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><defs><path id="circulo" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#circulo">UNA BENDICIÓN PARA TU AUTO · MOFLES JIREH ·</textPath></text></svg>
+          <img src="img/logo-180.png" alt="" width="64" height="64">
+        </div>
+      </figure>
     </div>
-    <div class="wrap hero-inner">
-      <h1 class="hero-title">
-        <span class="sign"><span class="sign-a">MOFLES</span> <span class="sign-b">JIREH</span></span>
-        <span class="slogan">¡Una bendición para tu auto!</span>
-        <span class="hero-sub">Mofles, escapes y manifolds en San Pedro Sula</span>
-      </h1>
-      <p class="lead">Reparamos, cambiamos y fabricamos todo el sistema de escape, con opciones según tu presupuesto.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Cotizar por WhatsApp</a>
-        <a class="btn btn-ghost" href="#visitanos"><svg class="ico" viewBox="0 0 384 512" aria-hidden="true"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg> Cómo llegar</a>
+
+    <ul class="facts">
+      <li><strong>A tu presupuesto</strong><span>Si tu mofle se puede reconstruir, lo reparamos en vez de cambiarlo.</span></li>
+      <li><strong>Trabajamos manifolds</strong><span>Un trabajo que pocos talleres de la ciudad hacen.</span></li>
+      <li><strong>Lunes a sábado</strong><span>De 7:00 a.m. a 5:00 p.m. en la Avenida Juan Pablo II.</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ SERVICIOS ============ -->
+  <section class="sec light" id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Servicios</span>
+        <h2>Todo el sistema de escape, <em>en un solo taller</em></h2>
+        <p>Desde un hule flojo hasta un escape completo hecho a la medida. Toca un servicio para cotizarlo por WhatsApp.</p>
+      </div>
+      <div class="svc-grid">
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20o%20reparaci%C3%B3n%20de%20mofle" target="_blank" rel="noopener"><span class="svc-n">01</span><h3>Cambio y reparación de mofles</h3><p>Soldamos roturas, reconstruimos o instalamos un mofle nuevo.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20de%20flexible" target="_blank" rel="noopener"><span class="svc-n">02</span><h3>Cambio de flexibles</h3><p>Reemplazo del flexible roto o con fuga, soldado y alineado.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20resonador%20o%20bazuca" target="_blank" rel="noopener"><span class="svc-n">03</span><h3>Resonadores y bazucas</h3><p>Instalación y cambio para controlar o modificar el sonido.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20modificaci%C3%B3n%20del%20escape" target="_blank" rel="noopener"><span class="svc-n">04</span><h3>Modificaciones del escape</h3><p>Cambios de tubería, salidas y recorrido del sistema de escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20reparaci%C3%B3n%20de%20manifold" target="_blank" rel="noopener"><span class="svc-n">05</span><h3>Manifolds</h3><p>Reparación de manifolds y de sus uniones con el escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20trabajo%20para%20maquinaria%20pesada" target="_blank" rel="noopener"><span class="svc-n">06</span><h3>Maquinaria pesada</h3><p>Fabricación de mofles y piezas varias para maquinaria pesada.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20de%20hules%20y%20soportes" target="_blank" rel="noopener"><span class="svc-n">07</span><h3>Hules y soportes</h3><p>Cambio de hules y soportes para que el escape no golpee ni vibre.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20revisi%C3%B3n%20del%20sistema%20de%20escape" target="_blank" rel="noopener"><span class="svc-n">08</span><h3>Revisión del sistema</h3><p>Revisamos todo el escape, incluidas las planchas, y te decimos qué necesita.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20instalaci%C3%B3n%20de%20piezas%20del%20escape" target="_blank" rel="noopener"><span class="svc-n">09</span><h3>Instalaciones en general</h3><p>Instalamos todo tipo de piezas del sistema de escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </div>
+      <div class="svc-note">
+        <p>¿No ves lo que necesitas? Mándanos una <strong>foto o video</strong> del problema y te decimos qué hay que hacer y cuánto cuesta.</p>
+        <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20les%20mando%20foto%20del%20problema%20de%20mi%20carro" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Mandar foto</a>
       </div>
     </div>
   </section>
 
-  <div class="lamina">
-    <div class="wrap facts">
-      <div class="fact"><svg class="ico" viewBox="0 0 576 512" aria-hidden="true"><path d="M312 24V34.5c6.4 1.2 12.6 2.7 18.2 4.2c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17c-10.9-2.9-21.1-4.9-30.2-5c-7.3-.1-14.7 1.7-19.4 4.4c-2.1 1.3-3.1 2.4-3.5 3c-.3 .5-.7 1.2-.7 2.8c0 .3 0 .5 0 .6c.2 .2 .9 1.2 3.3 2.6c5.8 3.5 14.4 6.2 27.4 10.1l.9 .3c11.1 3.3 25.9 7.8 37.9 15.3c13.7 8.6 26.1 22.9 26.4 44.9c.3 22.5-11.4 38.9-26.7 48.5c-6.7 4.1-13.9 7-21.3 8.8V232c0 13.3-10.7 24-24 24s-24-10.7-24-24V220.6c-9.5-2.3-18.2-5.3-25.6-7.8c-2.1-.7-4.1-1.4-6-2c-12.6-4.2-19.4-17.8-15.2-30.4s17.8-19.4 30.4-15.2c2.6 .9 5 1.7 7.3 2.5c13.6 4.6 23.4 7.9 33.9 8.3c8 .3 15.1-1.6 19.2-4.1c1.9-1.2 2.8-2.2 3.2-2.9c.4-.6 .9-1.8 .8-4.1l0-.2c0-1 0-2.1-4-4.6c-5.7-3.6-14.3-6.4-27.1-10.3l-1.9-.6c-10.8-3.2-25-7.5-36.4-14.4c-13.5-8.1-26.5-22-26.6-44.1c-.1-22.9 12.9-38.6 27.7-47.4c6.4-3.8 13.3-6.4 20.2-8.2V24c0-13.3 10.7-24 24-24s24 10.7 24 24zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/></svg><div><strong>A tu presupuesto</strong><p>Si tu mofle se puede reconstruir, lo reparamos en vez de cambiarlo.</p></div></div>
-      <div class="fact"><svg class="ico" viewBox="0 0 640 512" aria-hidden="true"><path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.9 8.4 167.2 8 160.4 8h-.7c-6.8 0-13.5 .4-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-19-.5-24.7 7.1c-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6c-3.7 8.7-.9 18.6 6.2 25l22.2 19.8C32.6 161.9 32 168.9 32 176s.6 14.1 1.7 20.9L11.5 216.7c-7.1 6.3-9.9 16.2-6.2 25c2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6c5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8c6.7 .8 13.5 1.2 20.4 1.2s13.7-.4 20.4-1.2c9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1c3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5c3.7-8.7 .9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM504.7 500.5c6.3 7.1 16.2 9.9 25 6.2c5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8c7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2l29.1-6.1c9.3-1.9 16.7-9.1 17.8-18.5c.8-6.7 1.2-13.5 1.2-20.4s-.4-13.7-1.2-20.4c-1.1-9.4-8.6-16.6-17.8-18.5L583.9 307c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7c-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6c-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1 .6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2c-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9c-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2L315.1 313c-9.3 1.9-16.7 9.1-17.8 18.5c-.8 6.7-1.2 13.5-1.2 20.4s.4 13.7 1.2 20.4c1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7c4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6c8.7 3.7 18.6 .9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><div><strong>Trabajamos manifolds</strong><p>Un trabajo que pocos talleres de la ciudad hacen.</p></div></div>
-      <div class="fact"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg><div><strong>Lunes a sábado</strong><p>De 7:00 a.m. a 5:00 p.m. en la Avenida Juan Pablo II.</p></div></div>
-    </div>
-  </div>
-
-  <!-- ============ SERVICIOS ============ -->
-  <section class="sec services" id="servicios">
-    <div class="wrap">
+  <!-- ============ REPARAR ANTES QUE CAMBIAR ============ -->
+  <section class="sec dark repair">
+    <div class="wrap repair-grid">
       <div class="sec-head">
-                <h2>Todo el sistema de escape, en un solo taller</h2>
-        <p>Desde un hule flojo hasta un escape completo hecho a la medida. Si no ves lo que necesitas, pregúntanos.</p>
+        <span class="kicker">A tu presupuesto</span>
+        <h2>Si se puede reparar, <em>no te lo cambiamos.</em></h2>
+        <p>Muchos mofles se pueden soldar y reconstruir. Antes de venderte una pieza nueva, revisamos si la tuya tiene arreglo y te damos las dos opciones con su precio.</p>
+        <a class="btn btn-gold" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20%C2%BFmi%20mofle%20se%20puede%20reparar%3F%20Les%20mando%20foto" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> ¿El mío tiene arreglo?</a>
       </div>
-      <div class="svc-grid">
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M352 320c88.4 0 160-71.6 160-160c0-15.3-2.2-30.1-6.2-44.2c-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8c-3 3-7.1 4.7-11.3 4.7H336c-8.8 0-16-7.2-16-16V118.6c0-4.2 1.7-8.3 4.7-11.3l76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C382.1 2.2 367.3 0 352 0C263.6 0 192 71.6 192 160c0 19.1 3.4 37.5 9.5 54.5L19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L297.5 310.5c17 6.2 35.4 9.5 54.5 9.5zM80 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></span><h3>Cambio y reparación de mofles</h3><p>Soldamos roturas, reconstruimos o instalamos un mofle nuevo.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 640 512" aria-hidden="true"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></span><h3>Cambio de flexibles</h3><p>Reemplazo del flexible roto o con fuga, soldado y alineado.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM412.6 181.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5z"/></svg></span><h3>Resonadores y bazucas</h3><p>Instalación y cambio para controlar o modificar el sonido.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 384 512" aria-hidden="true"><path d="M153.6 29.9l16-21.3C173.6 3.2 180 0 186.7 0C198.4 0 208 9.6 208 21.3V43.5c0 13.1 5.4 25.7 14.9 34.7L307.6 159C356.4 205.6 384 270.2 384 337.7C384 434 306 512 209.7 512H192C86 512 0 426 0 320v-3.8c0-48.8 19.4-95.6 53.9-130.1l3.5-3.5c4.2-4.2 10-6.6 16-6.6C85.9 176 96 186.1 96 198.6V288c0 35.3 28.7 64 64 64s64-28.7 64-64v-3.9c0-18-7.2-35.3-19.9-48l-38.6-38.6c-24-24-37.5-56.7-37.5-90.7c0-27.7 9-54.8 25.6-76.9z"/></svg></span><h3>Modificaciones del escape</h3><p>Cambios de tubería, salidas y recorrido del sistema de escape.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 640 512" aria-hidden="true"><path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.9 8.4 167.2 8 160.4 8h-.7c-6.8 0-13.5 .4-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-19-.5-24.7 7.1c-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6c-3.7 8.7-.9 18.6 6.2 25l22.2 19.8C32.6 161.9 32 168.9 32 176s.6 14.1 1.7 20.9L11.5 216.7c-7.1 6.3-9.9 16.2-6.2 25c2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6c5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8c6.7 .8 13.5 1.2 20.4 1.2s13.7-.4 20.4-1.2c9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1c3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5c3.7-8.7 .9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM504.7 500.5c6.3 7.1 16.2 9.9 25 6.2c5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8c7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2l29.1-6.1c9.3-1.9 16.7-9.1 17.8-18.5c.8-6.7 1.2-13.5 1.2-20.4s-.4-13.7-1.2-20.4c-1.1-9.4-8.6-16.6-17.8-18.5L583.9 307c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7c-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6c-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1 .6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2c-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9c-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2L315.1 313c-9.3 1.9-16.7 9.1-17.8 18.5c-.8 6.7-1.2 13.5-1.2 20.4s.4 13.7 1.2 20.4c1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7c4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6c8.7 3.7 18.6 .9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg></span><h3>Manifolds</h3><p>Reparación de manifolds y de sus uniones con el escape.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 640 512" aria-hidden="true"><path d="M288 64v64H416L368 64H288zM419.2 25.6L496 128h80c17.7 0 32 14.3 32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32c-29.2-38.9-75.7-64-128-64s-98.8 25.1-128 64H288c-29.2-38.9-75.7-64-128-64s-98.8 25.1-128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32V160c0-17.7 14.3-32 32-32H224V48c0-26.5 21.5-48 48-48h96c20.1 0 39.1 9.5 51.2 25.6zM152 256h16c12.1 0 22.1 8.9 23.8 20.6c7.6 2.2 14.9 5.3 21.7 9c9.4-7 22.8-6.3 31.3 2.3l11.3 11.3c8.6 8.6 9.3 21.9 2.3 31.3c3.7 6.8 6.8 14.1 9 21.7c11.6 1.7 20.6 11.7 20.6 23.8v16c0 12.1-8.9 22.1-20.6 23.8c-2.2 7.6-5.3 14.9-9 21.7c7 9.4 6.3 22.8-2.3 31.3l-11.3 11.3c-8.6 8.6-21.9 9.3-31.3 2.2c-6.8 3.7-14.1 6.8-21.7 9C190.1 503.1 180.1 512 168 512H152c-12.1 0-22.1-8.9-23.8-20.6c-7.6-2.2-14.9-5.3-21.7-9c-9.4 7.1-22.8 6.3-31.3-2.2L63.8 468.9c-8.6-8.6-9.3-21.9-2.3-31.3c-3.7-6.9-6.8-14.1-9-21.8C40.9 414.1 32 404.1 32 392V376c0-12.1 8.9-22.1 20.6-23.8c2.2-7.6 5.3-14.9 9-21.8c-7-9.4-6.3-22.8 2.3-31.3l11.3-11.3c8.6-8.6 21.9-9.3 31.3-2.3c6.8-3.7 14.1-6.8 21.7-9c1.7-11.6 11.7-20.6 23.8-20.6zm8 176a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM448.2 276.6c1.7-11.6 11.7-20.6 23.8-20.6h16c12.1 0 22.1 8.9 23.8 20.6c7.6 2.2 14.9 5.3 21.8 9c9.4-7 22.8-6.3 31.3 2.3l11.3 11.3c8.6 8.6 9.3 21.9 2.2 31.3c3.7 6.8 6.8 14.1 9 21.7c11.6 1.7 20.6 11.7 20.6 23.8v16c0 12.1-8.9 22.1-20.6 23.8c-2.2 7.6-5.3 14.9-9 21.7c7 9.4 6.3 22.8-2.2 31.3l-11.3 11.3c-8.6 8.6-21.9 9.3-31.3 2.2c-6.9 3.7-14.1 6.8-21.8 9C510.1 503.1 500.1 512 488 512H472c-12.1 0-22.1-8.9-23.8-20.6c-7.6-2.2-14.9-5.3-21.7-9c-9.4 7.1-22.8 6.3-31.3-2.2l-11.3-11.3c-8.6-8.6-9.3-21.9-2.2-31.3c-3.7-6.9-6.8-14.1-9-21.8C360.9 414.1 352 404.1 352 392V376c0-12.1 8.9-22.1 20.6-23.8c2.2-7.6 5.3-14.9 9-21.8c-7-9.4-6.3-22.8 2.2-31.3l11.3-11.3c8.6-8.6 21.9-9.3 31.3-2.3c6.8-3.7 14.1-6.8 21.7-9zM528 384a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"/></svg></span><h3>Maquinaria pesada</h3><p>Fabricación de mofles y piezas varias para maquinaria pesada.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z"/></svg></span><h3>Hules y soportes</h3><p>Cambio de hules y soportes para que el escape no golpee ni vibre.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></span><h3>Revisión del sistema</h3><p>Revisamos todo el escape, incluidas las planchas, y te decimos qué necesita.</p></article>
-        <article class="svc"><span class="svc-ico"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg></span><h3>Instalaciones en general</h3><p>Instalamos todo tipo de piezas del sistema de escape.</p></article>
-      </div>
-      <div class="svc-note">
-        <p>Mándanos una <strong>foto o video</strong> del problema y te decimos qué hay que hacer y cuánto cuesta.</p>
-        <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Mandar foto</a>
+      <div class="pair">
+        <figure><img src="trabajos/mofle-roto.webp" alt="Mofle roto visto debajo de un carro, con una rajadura a lo largo" width="1280" height="960" loading="lazy"><figcaption><span>Así llegan</span>Mofle con rajadura, debajo del carro</figcaption></figure>
+        <figure><img src="trabajos/mofle-reparado.webp" alt="Mofle reconstruido con soldadura nueva en la salida, sobre la mesa del taller" width="1280" height="960" loading="lazy"><figcaption><span>Así se reparan</span>Mofle reconstruido en la mesa del taller</figcaption></figure>
       </div>
     </div>
   </section>
 
   <!-- ============ CÓMO FUNCIONA ============ -->
-  <section class="sec" id="proceso">
+  <section class="sec cream" id="proceso">
     <div class="wrap">
-      <div class="sec-head">
-                <h2>De la foto al carro listo</h2>
+      <div class="sec-head center">
+        <span class="kicker">Proceso</span>
+        <h2>De la foto <em>al carro listo</em></h2>
       </div>
       <ol class="steps">
         <li><h3>Mándanos foto o video</h3><p>Por WhatsApp, del ruido, la fuga o la pieza dañada.</p></li>
@@ -126,27 +171,47 @@
   </section>
 
   <!-- ============ TRABAJOS (se llenan desde trabajos.js) ============ -->
-  <section class="sec work" id="trabajos">
+  <section class="sec dark work" id="trabajos">
     <div class="wrap">
       <div class="sec-head">
-                <h2>Así trabajamos en el taller</h2>
+        <span class="kicker">Trabajos</span>
+        <h2>Así trabajamos <em>en el taller</em></h2>
         <p>Fotos y videos reales de carros que pasaron por Mofles Jireh. Toca una foto para verla en grande.</p>
       </div>
       <div class="filters" id="filtros" role="group" aria-label="Filtrar trabajos"></div>
       <div class="gallery" id="galeria" aria-live="polite"></div>
       <div class="work-foot">
         <p>Más trabajos en nuestra página de Facebook.</p>
-        <button class="btn btn-outline more" type="button" id="verMas" hidden>Ver más trabajos</button>
-        <a class="btn btn-yellow" href="https://www.facebook.com/profile.php?id=61570122182302" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg> Ver en Facebook</a>
+        <button class="btn btn-line more" type="button" id="verMas" hidden>Ver más trabajos</button>
+        <a class="btn btn-gold" href="https://www.facebook.com/profile.php?id=61570122182302" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-fb"/></svg> Ver en Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEÑAS (se llenan desde resenas.js) ============ -->
+  <section class="sec light" id="resenas">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker">Reseñas</span>
+        <h2>Lo que dicen <em>nuestros clientes</em></h2>
+      </div>
+      <div class="reviews" id="listaResenas"></div>
+      <div class="review-cta">
+        <p id="resenasVacio">¿Ya trajiste tu carro a Mofles Jireh? Tu opinión ayuda a otros conductores de San Pedro Sula a encontrarnos.</p>
+        <div class="review-links">
+          <a class="btn btn-dark" href="https://share.google/jwrLP9QqdyHwowMaO" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg> Dejar reseña en Google</a>
+          <a class="btn btn-outline" href="https://www.facebook.com/profile.php?id=61570122182302" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-fb"/></svg> Opinar en Facebook</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ CÓMO LLEGAR ============ -->
-  <section class="sec find" id="visitanos">
+  <section class="sec cream find" id="visitanos">
     <div class="wrap">
       <div class="sec-head">
-                <h2>Así nos encuentras</h2>
+        <span class="kicker">Cómo llegar</span>
+        <h2>Así <em>nos encuentras</em></h2>
         <p>Estamos sobre la Avenida Juan Pablo II, frente a Panadería PANIFER. Busca el rótulo amarillo de <strong>SILENCIADORES</strong> y los mofles exhibidos en la acera.</p>
       </div>
       <div class="find-grid">
@@ -163,18 +228,19 @@
     </div>
   </section>
 
-  <section class="lamina" id="ubicacion">
+  <section class="sec dark visit" id="ubicacion">
     <div class="wrap visit-grid">
       <div class="visit-info">
-                <h2>Estamos en la Juan Pablo II</h2>
+        <span class="kicker">Visítanos</span>
+        <h2>Estamos en la <em>Juan Pablo II</em></h2>
         <ul class="info-list">
-          <li><svg class="ico" viewBox="0 0 384 512" aria-hidden="true"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg><div><strong>Dirección</strong><span>Avenida Juan Pablo II, frente a Panadería PANIFER, San Pedro Sula</span></div></li>
-          <li><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg><div><strong>Horario</strong><span>Lunes a sábado, 7:00 a.m. – 5:00 p.m.</span></div></li>
-          <li><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg><div><strong>WhatsApp y llamadas</strong><a href="tel:+50495494420">9549-4420</a></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>Dirección</strong><span>Avenida Juan Pablo II, frente a Panadería PANIFER, San Pedro Sula</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Horario</strong><span>Lunes a sábado, 7:00 a.m. – 5:00 p.m.</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg><div><strong>WhatsApp y llamadas</strong><a href="tel:+50495494420">9549-4420</a></div></li>
         </ul>
         <div class="visit-ctas">
-          <a class="btn btn-ink" href="https://share.google/jwrLP9QqdyHwowMaO" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M512 96c0 50.2-59.1 125.1-84.6 155c-3.8 4.4-9.4 6.1-14.5 5H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c53 0 96 43 96 96s-43 96-96 96H139.6c8.7-9.9 19.3-22.6 30-36.8c6.3-8.4 12.8-17.6 19-27.2H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320c-53 0-96-43-96-96s43-96 96-96h39.8c-21-31.5-39.8-67.7-39.8-96c0-53 43-96 96-96s96 43 96 96zM117.1 489.1c-3.8 4.3-7.2 8.1-10.1 11.3l-1.8 2-.2-.2c-6 4.6-14.6 4-20-1.8C59.8 473 0 402.5 0 352c0-53 43-96 96-96s96 43 96 96c0 30-21.1 67-43.5 97.9c-10.7 14.7-21.7 28-30.8 38.5l-.6 .7zM128 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM416 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg> Abrir en Google Maps</a>
-          <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Escribir</a>
+          <a class="btn btn-gold" href="https://share.google/jwrLP9QqdyHwowMaO" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-map"/></svg> Abrir en Google Maps</a>
+          <a class="btn btn-line" href="tel:+50495494420"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg> Llamar</a>
         </div>
       </div>
       <div class="map">
@@ -184,19 +250,23 @@
   </section>
 </main>
 
-<div class="hazard" aria-hidden="true"></div>
 <footer>
   <div class="wrap">
-    <a class="brand" href="#inicio" aria-label="Mofles Jireh, volver arriba"><img src="img/logo-180.png" alt="" width="42" height="42"><span class="wordmark"><b>MOFLES</b> <i>JIREH</i></span></a>
+    <a class="brand" href="#inicio" aria-label="Mofles Jireh, volver arriba"><img src="img/logo-180.png" alt="Logo de Mofles Jireh" width="44" height="44" loading="lazy"><span class="wordmark">MOFLES <b>JIREH</b></span></a>
     <div class="foot-links">
-      <a href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> 9549-4420</a>
-      <a href="https://www.facebook.com/profile.php?id=61570122182302" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg> Facebook</a>
+      <a href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> 9549-4420</a>
+      <a href="https://www.facebook.com/profile.php?id=61570122182302" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-fb"/></svg> Facebook</a>
     </div>
     <small>© <span id="anio">2026</span> Mofles Jireh, San Pedro Sula. ¡Una bendición para tu auto!</small>
   </div>
 </footer>
 
-<a class="wa-float off" id="waFloat" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+<!-- Barra de acciones fija (solo celular) -->
+<nav class="dock" aria-label="Acciones rápidas">
+  <a href="tel:+50495494420"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Llamar</a>
+  <a class="dock-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%20un%20trabajo" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="#visitanos"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Cómo llegar</a>
+</nav>
 
 <div class="viewer" id="visor" role="dialog" aria-modal="true" aria-labelledby="visorTitulo" hidden>
   <div class="v-top"><span id="visorContador"></span><button class="v-btn" type="button" id="visorCerrar" aria-label="Cerrar">×</button></div>
@@ -208,6 +278,7 @@
 </div>
 
 <script src="trabajos.js"></script>
+<script src="resenas.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

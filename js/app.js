@@ -17,19 +17,51 @@
   var $ = function (id) { return document.getElementById(id); };
   var anio = $('anio'); if (anio) anio.textContent = new Date().getFullYear();
 
-  /* ---------- Video del inicio: solo si el usuario no pidió menos movimiento ---------- */
-  var hv = $('heroVideo');
   var menosMov = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (hv && !menosMov) {
-    hv.preload = 'auto';
-    var p = hv.play(); if (p && p.catch) p.catch(function () {});
+
+  /* ---------- Menú del celular ---------- */
+  var nav = $('nav'), menu = $('menu'), menuBtn = $('menuBtn');
+  function menuAbierto(si) {
+    menu.classList.toggle('abierto', si);
+    menuBtn.setAttribute('aria-expanded', String(si));
+    menuBtn.setAttribute('aria-label', si ? 'Cerrar menú' : 'Abrir menú');
+    document.body.style.overflow = si ? 'hidden' : '';
+  }
+  if (menu && menuBtn) {
+    menuBtn.addEventListener('click', function () { menuAbierto(menuBtn.getAttribute('aria-expanded') !== 'true'); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) menuAbierto(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('abierto')) { menuAbierto(false); menuBtn.focus(); } });
+    window.addEventListener('resize', function () { if (window.innerWidth > 980 && menu.classList.contains('abierto')) menuAbierto(false); });
   }
 
-  /* ---------- Botón flotante de WhatsApp: aparece al pasar el inicio ---------- */
-  var wf = $('waFloat'), hero = $('inicio');
-  if (wf && hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (e) { wf.classList.toggle('off', e[0].isIntersecting); }, { threshold: 0.15 }).observe(hero);
-  } else if (wf) { wf.classList.remove('off'); }
+  /* ---------- Línea bajo el menú al bajar ---------- */
+  if (nav) {
+    var marcar = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', marcar, { passive: true }); marcar();
+  }
+
+  /* ---------- "Abierto ahora": horario de lunes a sábado, 7 a.m. a 5 p.m., hora de Honduras ---------- */
+  var ABRE = 7, CIERRA = 17;
+  var estado = $('estado'), estadoTxt = $('estadoTxt'), estadoSub = $('estadoSub');
+  function pintarEstado() {
+    if (!estado) return;
+    var hn = new Date(Date.now() - 6 * 3600 * 1000);   // Honduras es UTC-6 todo el año
+    var dia = hn.getUTCDay(), hora = hn.getUTCHours() + hn.getUTCMinutes() / 60;
+    var trabaja = dia >= 1 && dia <= 6;
+    var abierto = trabaja && hora >= ABRE && hora < CIERRA;
+    estado.classList.toggle('abierto', abierto);
+    estado.classList.toggle('cerrado', !abierto);
+    if (abierto) {
+      estadoTxt.textContent = 'Abierto ahora';
+      estadoSub.textContent = 'Cerramos a las 5:00 p.m.';
+    } else {
+      estadoTxt.textContent = 'Cerrado ahora';
+      if (trabaja && hora < ABRE) estadoSub.textContent = 'Abrimos hoy a las 7:00 a.m.';
+      else if (dia === 6 || dia === 0) estadoSub.textContent = 'Abrimos el lunes a las 7:00 a.m.';
+      else estadoSub.textContent = 'Abrimos mañana a las 7:00 a.m.';
+    }
+  }
+  pintarEstado(); setInterval(pintarEstado, 60000);
 
   /* ---------- Video de llegada: se reproduce solo cuando está a la vista ---------- */
   var lv = $('llegadaVideo');
@@ -106,6 +138,11 @@
           '</figure>';
       }).join('');
     }
+    // quita el brillo de carga cuando cada foto termina de cargar
+    gal.querySelectorAll('img').forEach(function (img) {
+      var listo = function () { img.closest('.g-item').classList.add('ok'); };
+      if (img.complete) listo(); else { img.addEventListener('load', listo); img.addEventListener('error', listo); }
+    });
     if (verMas) {
       var resto = todos.length - visibles.length;
       verMas.hidden = resto <= 0;
@@ -187,4 +224,20 @@
 
   pintarFiltros();
   pintar();
+
+  /* ---------- Reseñas (se editan en resenas.js) ---------- */
+  var listaRes = $('listaResenas'), vacio = $('resenasVacio');
+  var resenas = (window.RESENAS || []).filter(function (r) { return r && r.texto && r.nombre; });
+  var ESTRELLA = '<svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>';
+  if (listaRes && resenas.length) {
+    listaRes.innerHTML = resenas.map(function (r) {
+      var n = Math.max(1, Math.min(5, Math.round(r.estrellas || 5)));
+      return '<figure class="review">' +
+        '<div class="stars" role="img" aria-label="' + n + ' de 5 estrellas">' + new Array(n + 1).join(ESTRELLA) + '</div>' +
+        '<blockquote>“' + esc(r.texto) + '”</blockquote>' +
+        '<figcaption><strong>' + esc(r.nombre) + '</strong>' + (r.fuente ? ' · ' + esc(r.fuente) : '') + '</figcaption>' +
+        '</figure>';
+    }).join('');
+    if (vacio) vacio.textContent = '¿Ya trajiste tu carro? Cuéntanos cómo te fue.';
+  }
 })();
