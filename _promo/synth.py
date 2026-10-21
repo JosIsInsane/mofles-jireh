@@ -84,7 +84,7 @@ for k, c in enumerate([4.8, 9.6, 14.0, 16.0, 18.0, 21.0, 24.0]):   # dissolves /
     add(whoosh(0.6), c - 0.45, 0.2, (-0.4 if k % 2 else 0.4))
 add(whoosh(0.4), 7.2 - 0.4, 0.8, 0.5); add(clang(380, 0.7), 7.2, 0.25, -0.4)    # whip
 add(whoosh(0.5), 12.0 - 0.45, 0.8, -0.5); add(boom(0.5), 12.0)                  # brand wipe into generator
-add(riser(1.2), 25.8, 0.9)
+# riser at 25.8 removed: the music track swells there
 add(boom(1.0), 27.0); add(clang(260, 1.6), 27.0, 0.5)
 for tt in (27.5, 28.15):
     add(kick(0.8), tt, 0.7); add(clang(520, 0.6), tt, 0.25)

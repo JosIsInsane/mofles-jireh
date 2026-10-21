@@ -1,0 +1,5 @@
+Mezcla de audio del promo:
+- Música: audio del video "Diseño sin título (3).mp4" (720p), recortado de 12.75 s a 45.95 s,
+  volumen 0.5, fade out final de 1.6 s. Su re-entrada (39.75 s) cae en el logo (27.0 s del promo).
+- Efectos: synth.py -> fx.wav, volumen 0.9.
+- ffmpeg: amix (sin normalizar) + alimiter + loudnorm I=-14 LUFS, TP=-1.5.
