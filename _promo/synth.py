@@ -1,6 +1,6 @@
 import numpy as np, wave, sys
 SR = 48000
-T = 52.2
+T = 33.2
 B = 0.6  # 100 BPM
 N = int(SR * T)
 L = np.zeros(N); R = np.zeros(N)
@@ -75,31 +75,24 @@ def bassnote(f, dur):
     return s * env(n, 0.005, dur * 0.6) * 0.35
 
 # FX only (no music). Timing matches index.html.
-for k in range(60):
-    tt = rng.uniform(0.2, 3.4)
+for k in range(40):
+    tt = rng.uniform(0.2, 2.2)
     add(band(rng.standard_normal(int(0.02 * SR)), 2500, 11000) * env(int(0.02 * SR), 0.0005, 0.004), tt, rng.uniform(.05, .25), rng.uniform(-.6, .6))
-add(riser(1.2), 2.4, 0.7)
-add(boom(0.8), 3.6)
-add(clang(420, 0.8), 3.6, 0.3)
-soft = [6.6, 12.6, 18.6, 24.6, 27.6, 29.6, 31.6, 33.6]   # dissolves: barely-there air
-for k, c in enumerate(soft):
-    add(whoosh(0.6), c - 0.45, 0.22, (-0.4 if k % 2 else 0.4))
-add(whoosh(0.4), 9.6 - 0.4, 0.8, 0.5); add(clang(380, 0.7), 9.6, 0.25, -0.4)   # whip
-add(clang(470, 0.5), 15.6, 0.2)                                                # hard cut
-add(whoosh(0.5), 21.6 - 0.45, 0.8, -0.5); add(boom(0.4), 21.6)                 # brand wipe
-# build to logo
-add(whoosh(0.6), 37.4 - 0.45, 0.15); add(whoosh(0.6), 41.0 - 0.45, 0.15, -0.3)
-add(riser(1.2), 43.2, 0.9)
-add(boom(1.0), 44.4)
-add(clang(260, 1.6), 44.4, 0.5)
-for tt in (44.9, 45.55):
+add(riser(0.9), 1.5, 0.7)
+add(boom(0.8), 2.4); add(clang(420, 0.8), 2.4, 0.3)
+for k, c in enumerate([4.8, 9.6, 14.0, 16.0, 18.0, 21.0, 24.0]):   # dissolves / caption changes
+    add(whoosh(0.6), c - 0.45, 0.2, (-0.4 if k % 2 else 0.4))
+add(whoosh(0.4), 7.2 - 0.4, 0.8, 0.5); add(clang(380, 0.7), 7.2, 0.25, -0.4)    # whip
+add(whoosh(0.5), 12.0 - 0.45, 0.8, -0.5); add(boom(0.5), 12.0)                  # brand wipe into generator
+add(riser(1.2), 25.8, 0.9)
+add(boom(1.0), 27.0); add(clang(260, 1.6), 27.0, 0.5)
+for tt in (27.5, 28.15):
     add(kick(0.8), tt, 0.7); add(clang(520, 0.6), tt, 0.25)
-add(whoosh(0.3), 45.9, 0.5)
-add(clang(300, 2.0), 50.4, 0.3)
+add(whoosh(0.3), 28.5, 0.5)
 
 st = np.stack([L, R], 1)
 # simple glue: soft clip + normalize; fade tail
-fade = np.ones(N); fn = int(1.4 * SR); fade[-fn:] = np.linspace(1, 0, fn) ** 2
+fade = np.ones(N); fn = int(0.8 * SR); fade[-fn:] = np.linspace(1, 0, fn) ** 2
 st *= fade[:, None]
 st = np.tanh(st * 1.3); st /= np.abs(st).max() * 1.12
 with wave.open(sys.argv[1], 'wb') as w:
