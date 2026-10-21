@@ -1,6 +1,6 @@
 import numpy as np, wave, sys
 SR = 48000
-T = 44.4
+T = 52.2
 B = 0.6  # 100 BPM
 N = int(SR * T)
 L = np.zeros(N); R = np.zeros(N)
@@ -88,13 +88,14 @@ add(whoosh(0.4), 9.6 - 0.4, 0.8, 0.5); add(clang(380, 0.7), 9.6, 0.25, -0.4)   #
 add(clang(470, 0.5), 15.6, 0.2)                                                # hard cut
 add(whoosh(0.5), 21.6 - 0.45, 0.8, -0.5); add(boom(0.4), 21.6)                 # brand wipe
 # build to logo
-add(riser(1.2), 35.4, 0.9)
-add(boom(1.0), 36.6)
-add(clang(260, 1.6), 36.6, 0.5)
-for tt in (37.1, 37.75):
+add(whoosh(0.6), 37.4 - 0.45, 0.15); add(whoosh(0.6), 41.0 - 0.45, 0.15, -0.3)
+add(riser(1.2), 43.2, 0.9)
+add(boom(1.0), 44.4)
+add(clang(260, 1.6), 44.4, 0.5)
+for tt in (44.9, 45.55):
     add(kick(0.8), tt, 0.7); add(clang(520, 0.6), tt, 0.25)
-add(whoosh(0.3), 38.1, 0.5)
-add(clang(300, 2.0), 42.6, 0.3)
+add(whoosh(0.3), 45.9, 0.5)
+add(clang(300, 2.0), 50.4, 0.3)
 
 st = np.stack([L, R], 1)
 # simple glue: soft clip + normalize; fade tail
