@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="img/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <link rel="preload" as="image" href="trabajos/mofle-nuevo-chispas.webp">
 <link rel="stylesheet" href="css/estilos.css">
 <script type="application/ld+json">
@@ -92,16 +92,16 @@
       </div>
 
       <figure class="hero-art">
-        <div class="arch">
+        <div class="shot" id="soldadura">
           <img src="trabajos/mofle-nuevo-chispas.webp" alt="Soldando un mofle nuevo debajo de un carro en el taller, con chispas" width="1280" height="960" fetchpriority="high">
+          <div class="flash" id="destello" aria-hidden="true"></div>
+          <canvas id="chispas" aria-hidden="true"></canvas>
+          <span class="mark tl" aria-hidden="true"></span><span class="mark tr" aria-hidden="true"></span><span class="mark bl" aria-hidden="true"></span><span class="mark br" aria-hidden="true"></span>
         </div>
+        <figcaption class="shot-tag"><span class="rec" aria-hidden="true"></span>Soldando un mofle nuevo en el taller</figcaption>
         <div class="status" id="estado" aria-live="polite">
           <span class="dot"></span>
           <span><strong id="estadoTxt">Lunes a sábado</strong><small id="estadoSub">7:00 a.m. – 5:00 p.m.</small></span>
-        </div>
-        <div class="seal" aria-hidden="true">
-          <svg viewBox="0 0 200 200"><defs><path id="circulo" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#circulo">UNA BENDICIÓN PARA TU AUTO · MOFLES JIREH ·</textPath></text></svg>
-          <img src="img/logo-180.png" alt="" width="64" height="64">
         </div>
       </figure>
     </div>

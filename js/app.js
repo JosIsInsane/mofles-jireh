@@ -63,6 +63,86 @@
   }
   pintarEstado(); setInterval(pintarEstado, 60000);
 
+  /* ---------- Soldadura animada en la foto de portada ----------
+     Chispas y destello dibujados encima de la foto, saliendo del punto donde se suelda.
+     Si cambias la foto, cambia PUNTO_X y PUNTO_Y (en píxeles de la foto original). */
+  var shot = $('soldadura'), cv = $('chispas');
+  if (shot && cv && cv.getContext && !menosMov) {
+    var ctx = cv.getContext('2d');
+    var IMG_W = 1280, IMG_H = 960, PUNTO_X = 895, PUNTO_Y = 324;
+    var w = 0, h = 0, k = 1, wx = 0, wy = 0, piso = 0;
+    var chispas = [], visible = true, soldando = true, cambioEn = 0, brillo = .7, corriendo = false;
+
+    var medir = function () {
+      var r = shot.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = r.width; h = r.height;
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var pos = getComputedStyle(shot.querySelector('img')).objectPosition.split(' ');
+      var esc = Math.max(w / IMG_W, h / IMG_H);
+      wx = (w - IMG_W * esc) * (parseFloat(pos[0]) / 100) + PUNTO_X * esc;
+      wy = (h - IMG_H * esc) * (parseFloat(pos[1]) / 100) + PUNTO_Y * esc;
+      k = w / 560; piso = h * 0.93;
+      shot.style.setProperty('--wx', wx + 'px'); shot.style.setProperty('--wy', wy + 'px');
+    };
+
+    var lanzar = function (n) {
+      for (var i = 0; i < n; i++) {
+        var ang = (Math.random() * 240 - 30) * Math.PI / 180;   // casi todas hacia abajo y a los lados
+        var vel = (1.2 + Math.random() * Math.random() * 7.5) * k;
+        chispas.push({ x: wx, y: wy, vx: Math.cos(ang) * vel, vy: Math.sin(ang) * vel - 1.2 * k,
+          edad: 0, vida: 22 + Math.random() * 55, grosor: .8 + Math.random() * 1.4 });
+      }
+    };
+
+    var cuadro = function (t) {
+      if (!visible) { corriendo = false; return; }
+      // el soldador suelda unos segundos y para un momento, como en la vida real
+      if (t > cambioEn) {
+        soldando = !soldando;
+        cambioEn = t + (soldando ? 1800 + Math.random() * 2600 : 350 + Math.random() * 650);
+      }
+      var meta = soldando ? .72 + Math.random() * .28 : .1;
+      brillo += (meta - brillo) * (soldando ? .55 : .2);
+      shot.style.setProperty('--flash', brillo.toFixed(3));
+      if (soldando) lanzar(3 + Math.floor(Math.random() * 7) + (Math.random() < .04 ? 28 : 0));
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.lineCap = 'round';
+      for (var i = chispas.length - 1; i >= 0; i--) {
+        var c = chispas[i];
+        c.edad++; c.vy += .2 * k; c.vx *= .985; c.vy *= .985;
+        c.x += c.vx; c.y += c.vy;
+        if (c.y > piso && c.vy > 0) { c.y = piso; c.vy *= -.3; c.vx *= .55; }   // rebotan en el piso
+        var r = c.edad / c.vida;
+        if (r >= 1 || c.x < -20 || c.x > w + 20) { chispas.splice(i, 1); continue; }
+        var color = r < .25 ? '255,250,225' : r < .6 ? '255,196,92' : '255,118,38';
+        ctx.strokeStyle = 'rgba(' + color + ',' + (1 - r).toFixed(2) + ')';
+        ctx.lineWidth = c.grosor * (1 - r * .5);
+        ctx.beginPath(); ctx.moveTo(c.x - c.vx * 2.2, c.y - c.vy * 2.2); ctx.lineTo(c.x, c.y); ctx.stroke();
+      }
+      // el arco: punto blanco-azulado que tiembla
+      if (soldando) {
+        var rad = (10 + Math.random() * 14) * k;
+        var g = ctx.createRadialGradient(wx, wy, 0, wx, wy, rad);
+        g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.3, 'rgba(210,230,255,.8)'); g.addColorStop(1, 'rgba(255,170,60,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(wx, wy, rad, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      requestAnimationFrame(cuadro);
+    };
+    var arrancar = function () { if (!corriendo && visible) { corriendo = true; requestAnimationFrame(cuadro); } };
+
+    medir();
+    window.addEventListener('resize', medir);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) { visible = e[0].isIntersecting && !document.hidden; arrancar(); }).observe(shot);
+    }
+    document.addEventListener('visibilitychange', function () { visible = !document.hidden; arrancar(); });
+    arrancar();
+  }
+
   /* ---------- Video de llegada: se reproduce solo cuando está a la vista ---------- */
   var lv = $('llegadaVideo');
   if (lv && !menosMov && 'IntersectionObserver' in window) {
