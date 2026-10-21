@@ -1,6 +1,6 @@
 import numpy as np, wave, sys
 SR = 48000
-T = 37.8
+T = 44.4
 B = 0.6  # 100 BPM
 N = int(SR * T)
 L = np.zeros(N); R = np.zeros(N)
@@ -74,53 +74,27 @@ def bassnote(f, dur):
     s = np.tanh(2.5 * np.sin(2 * np.pi * f * t) + 0.4 * np.sin(2 * np.pi * 2 * f * t))
     return s * env(n, 0.005, dur * 0.6) * 0.35
 
-# intro drone + weld crackle 0..3.6
-n = int(3.8 * SR); t = np.arange(n) / SR
-dr = (np.sin(2 * np.pi * 41.2 * t) + 0.5 * np.sin(2 * np.pi * 61.7 * t + np.sin(2 * np.pi * 0.3 * t))) * np.minimum(t / 1.2, 1) * 0.22
-# no music bed: drone removed
+# FX only (no music). Timing matches index.html.
 for k in range(60):
     tt = rng.uniform(0.2, 3.4)
     add(band(rng.standard_normal(int(0.02 * SR)), 2500, 11000) * env(int(0.02 * SR), 0.0005, 0.004), tt, rng.uniform(.05, .25), rng.uniform(-.6, .6))
-add(riser(1.2), 2.4, 0.9)
-add(clang(330, 1.2), 0.15, 0.5)
-
-# main groove 3.6..26.4 and outro groove 29.4..33.6
-roots = [41.2, 41.2, 49.0, 36.7]
-def groove(t0, t1, half=False):
-    bt = t0; i = 0
-    while bt < t1 - 1e-6:
-        if not half or i % 2 == 0: add(kick(), bt, 0.95)
-        if i % 4 in (1, 3) and not half: add(clap(), bt, 0.75, 0.1)
-        if half and i % 4 == 2: add(clap(), bt, 0.6)
-        add(hat(), bt + B / 2, 0.55, -0.3); add(hat(), bt, 0.25, 0.3)
-        if i % 8 == 7: add(hat(True), bt + B / 2, 0.4, -0.3)
-        r = roots[(i // 4) % 4]
-        add(bassnote(r * 2, B * 0.45), bt, 1.0); add(bassnote(r * 2, B * 0.3), bt + B * 0.75, 0.7)
-        bt += B; i += 1
-# groove(3.6, 28.8)  # music removed, FX only
-cuts = [3.6, 6.0, 8.4, 10.8, 13.2, 15.6, 18.0, 20.4, 22.8, 27.6]
-for k, c in enumerate(cuts):
-    add(whoosh(0.4), c - 0.4, 0.8, (-0.5 if k % 2 else 0.5))
-    add(clang([420, 380, 470, 350][k % 4], 0.8), c, 0.35, (0.4 if k % 2 else -0.4))
-add(boom(0.9), 3.6)
-# generator montage: a hit on every cut
-for k in range(1, 8):
-    tt = 22.8 + k * B
-    add(whoosh(0.18), tt - 0.18, 0.7, (-0.6 if k % 2 else 0.6))
-    add(clang([560, 470, 620, 520][k % 4], 0.35), tt, 0.3, (0.5 if k % 2 else -0.5))
-    add(hat(True), tt, 0.5)
-add(boom(0.8), 22.8)
+add(riser(1.2), 2.4, 0.7)
+add(boom(0.8), 3.6)
+add(clang(420, 0.8), 3.6, 0.3)
+soft = [6.6, 12.6, 18.6, 24.6, 27.6, 29.6, 31.6, 33.6]   # dissolves: barely-there air
+for k, c in enumerate(soft):
+    add(whoosh(0.6), c - 0.45, 0.22, (-0.4 if k % 2 else 0.4))
+add(whoosh(0.4), 9.6 - 0.4, 0.8, 0.5); add(clang(380, 0.7), 9.6, 0.25, -0.4)   # whip
+add(clang(470, 0.5), 15.6, 0.2)                                                # hard cut
+add(whoosh(0.5), 21.6 - 0.45, 0.8, -0.5); add(boom(0.4), 21.6)                 # brand wipe
 # build to logo
-add(riser(1.2), 28.8, 1.1)
-add(whoosh(0.6), 29.4, 1.0)
-add(boom(1.0), 30.0)
-add(clang(260, 1.6), 30.0, 0.6)
-for tt in (30.5, 31.15):
-    add(kick(1.0), tt, 0.9); add(clang(520, 0.6), tt, 0.3)
-add(whoosh(0.3), 31.5, 0.6)
-# groove(31.8, 36.0, half=True)  # music removed
-add(boom(0.6), 36.0)
-add(clang(300, 2.0), 36.0, 0.4)
+add(riser(1.2), 35.4, 0.9)
+add(boom(1.0), 36.6)
+add(clang(260, 1.6), 36.6, 0.5)
+for tt in (37.1, 37.75):
+    add(kick(0.8), tt, 0.7); add(clang(520, 0.6), tt, 0.25)
+add(whoosh(0.3), 38.1, 0.5)
+add(clang(300, 2.0), 42.6, 0.3)
 
 st = np.stack([L, R], 1)
 # simple glue: soft clip + normalize; fade tail
