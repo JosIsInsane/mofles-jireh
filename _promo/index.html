@@ -33,6 +33,7 @@
       .ln { position: relative; font-family: "Anton"; line-height: 1.02; text-transform: uppercase; overflow: hidden;
         padding: .02em .04em 0 0; white-space: nowrap; isolation: isolate; text-shadow: 0 6px 30px rgba(0,0,0,.35); }
       .ln.b { color: var(--y); }
+      .ln.sm { font-size: 118px !important; }
       .ln.o .ch { color: transparent; -webkit-text-stroke: 4px var(--y); text-shadow: none; }
       .ln.bar { color: var(--k); text-shadow: none; padding-left: .12em; margin-left: -.12em; display: inline-block; }
       .ln .hl { position: absolute; inset: .1em 0 .02em 0; background: var(--y); transform-origin: left center; }
@@ -40,7 +41,7 @@
       .ch { display: inline-block; will-change: transform; }
 
       #hud { position: absolute; inset: 0; z-index: 55; pointer-events: none; color: #fff; }
-      #brand { position: absolute; top: 80px; left: 80px; font-family: "Alfa Slab One"; font-size: 36px; letter-spacing: .03em; color: var(--k); background: var(--y); padding: 10px 22px 8px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+      #brand { position: absolute; top: 80px; left: 80px; font-family: "Alfa Slab One"; font-size: 44px; letter-spacing: .03em; color: var(--k); -webkit-text-stroke: 9px #fff; paint-order: stroke fill; filter: drop-shadow(0 6px 18px rgba(0,0,0,.45)); }
       #brand i { font-style: normal; color: var(--r); }
       #loc { position: absolute; top: 96px; right: 80px; font-family: "Oswald"; font-weight: 500; font-size: 24px; letter-spacing: .3em; opacity: .85; }
       #rec { position: absolute; top: 150px; left: 80px; width: 920px; height: 2px; background: rgba(255,255,255,.25); }
@@ -77,8 +78,8 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="35.4" data-width="1080" data-height="1920">
-      <audio id="score" class="clip" src="assets/score.m4a" data-start="0" data-duration="35.4" data-volume="0.8"></audio>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="37.8" data-width="1080" data-height="1920">
+      <audio id="score" class="clip" src="assets/score.m4a" data-start="0" data-duration="37.8" data-volume="0.8"></audio>
 
       <video id="m0" class="m clip" src="assets/weld.mp4" muted playsinline data-start="0" data-duration="3.95" style="z-index:1"></video>
       <video id="m1" class="m clip" src="assets/pipes.mp4" muted playsinline data-start="3.25" data-duration="3.1" style="z-index:2"></video>
@@ -89,31 +90,41 @@
       <video id="m6" class="m clip" src="assets/weld2.mp4" muted playsinline data-start="15.25" data-duration="3.1" style="z-index:7"></video>
       <img id="m7" class="m clip" src="assets/photo4.jpg" alt="" data-start="17.65" data-duration="3.1" style="z-index:8" />
       <video id="m8" class="m clip" src="assets/manifold.mp4" muted playsinline data-start="20.05" data-duration="3.1" style="z-index:9"></video>
-      <img id="m9" class="m clip" src="assets/photo3.jpg" alt="" data-start="22.45" data-duration="3.1" style="z-index:10" />
-      <img id="m10" class="m clip" src="assets/photo1.jpg" alt="" data-start="24.85" data-duration="3.15" style="z-index:11" />
 
-      <div id="shade" class="clip" data-start="0" data-duration="28"></div>
-      <div id="flash" class="clip" data-start="0" data-duration="28"></div>
-      <div id="wipe" class="clip" data-start="0" data-duration="28"><span>JIREH</span></div>
+      <!-- generator montage: one shot per beat -->
+      <video id="g0" class="m clip" src="assets/g0.mp4" muted playsinline data-start="22.8" data-duration="0.6" style="z-index:10"></video>
+      <video id="g1" class="m clip" src="assets/g1.mp4" muted playsinline data-start="23.4" data-duration="0.6" style="z-index:11"></video>
+      <video id="g2" class="m clip" src="assets/g2.mp4" muted playsinline data-start="24" data-duration="0.6" style="z-index:12"></video>
+      <img id="g3" class="m clip" src="assets/photo1.jpg" alt="" data-start="24.6" data-duration="0.6" style="z-index:13" />
+      <video id="g4" class="m clip" src="assets/g4.mp4" muted playsinline data-start="25.2" data-duration="0.6" style="z-index:14"></video>
+      <video id="g5" class="m clip" src="assets/g5.mp4" muted playsinline data-start="25.8" data-duration="0.6" style="z-index:15"></video>
+      <video id="g6" class="m clip" src="assets/g6.mp4" muted playsinline data-start="26.4" data-duration="0.6" style="z-index:16"></video>
+      <video id="g7" class="m clip" src="assets/g7.mp4" muted playsinline data-start="27" data-duration="0.95" style="z-index:17"></video>
+
+      <img id="m10" class="m clip" src="assets/photo3.jpg" alt="" data-start="27.25" data-duration="3.15" style="z-index:18" />
+
+      <div id="shade" class="clip" data-start="0" data-duration="30.4"></div>
+      <div id="flash" class="clip" data-start="0" data-duration="30.4"></div>
+      <div id="wipe" class="clip" data-start="0" data-duration="30.4"><span>JIREH</span></div>
 
       <div id="c0" class="cap clip" data-start="0" data-duration="3.6"><div class="kick"><b></b><span>EL TALLER</span></div><div class="ln a">Hecho</div><div class="ln b">a mano.</div></div>
       <div id="c1" class="cap clip" data-start="3.6" data-duration="2.4"><div class="kick"><b></b><span>MATERIA PRIMA</span></div><div class="ln a">Desde</div><div class="ln b">cero.</div></div>
-      <div id="c2" class="cap clip" data-start="6" data-duration="2.4"><div class="kick"><b></b><span>LÁMINA DE ACERO</span></div><div class="ln a">Acero</div><div class="ln b">que aguanta.</div></div>
+      <div id="c2" class="cap clip" data-start="6" data-duration="2.4"><div class="kick"><b></b><span>LÁMINA DE ACERO</span></div><div class="ln a">Acero</div><div class="ln b">reforzado.</div></div>
       <div id="c3" class="cap clip" data-start="8.4" data-duration="2.4"><div class="kick"><b></b><span>TUBO PERFORADO</span></div><div class="ln a">Cada</div><div class="ln b bar">detalle.</div></div>
       <div id="c4" class="cap clip" data-start="10.8" data-duration="2.4"><div class="kick"><b></b><span>TAPAS Y DESVÍOS</span></div><div class="ln a">A la</div><div class="ln b">medida.</div></div>
       <div id="c5" class="cap clip" data-start="13.2" data-duration="2.4"><div class="kick"><b></b><span>CUERPO</span></div><div class="ln a">Forjado</div><div class="ln b o">para durar.</div></div>
       <div id="c6" class="cap clip" data-start="15.6" data-duration="2.4"><div class="kick"><b></b><span>SOLDADURA</span></div><div class="ln a">Soldadura</div><div class="ln b">de precisión.</div></div>
       <div id="c7" class="cap clip" data-start="18" data-duration="2.4"><div class="kick"><b></b><span>PRODUCTO FINAL</span></div><div class="ln a">Listo</div><div class="ln b bar">para rugir.</div></div>
       <div id="c8" class="cap clip" data-start="20.4" data-duration="2.4"><div class="kick"><b></b><span>INSTALACIÓN</span></div><div class="ln a">Instalado</div><div class="ln b">en sitio.</div></div>
-      <div id="c9" class="cap clip" data-start="22.8" data-duration="2.4"><div class="kick"><b></b><span>EN OBRA</span></div><div class="ln a">Trabajo</div><div class="ln b">terminado.</div></div>
-      <div id="c10" class="cap clip" data-start="25.2" data-duration="2.4"><div class="kick"><b></b><span>PARA TODO MOTOR</span></div><div class="ln a">Autos.</div><div class="ln a">Camiones.</div><div class="ln b">Plantas de luz.</div></div>
+      <div id="c9" class="cap clip" data-start="22.8" data-duration="4.8"><div class="kick"><b></b><span>PROYECTO INDUSTRIAL</span></div><div class="ln a">Generador</div><div class="ln b sm">para recicladora.</div></div>
+      <div id="c10" class="cap clip" data-start="27.6" data-duration="2.4"><div class="kick"><b></b><span>EN OBRA</span></div><div class="ln a">Trabajo</div><div class="ln b">terminado.</div></div>
 
-      <div id="hud" class="clip" data-start="0" data-duration="27.6">
+      <div id="hud" class="clip" data-start="0" data-duration="30">
         <div id="brand">MOFLES <i>JIREH</i></div>
       </div>
 
-      <div id="outro" class="clip" data-start="27.6" data-duration="7.8">
-                <div id="oglow"></div>
+      <div id="outro" class="clip" data-start="30" data-duration="7.8">
+        <div id="oglow"></div>
         <div id="logo">
           <div id="lgFull"></div>
           <div id="lgMan" class="band" style="clip-path: inset(12% 0 54% 0)"></div>
@@ -129,46 +140,63 @@
           <div class="c4"><div>SAN PEDRO SULA · HONDURAS</div></div>
         </div>
       </div>
-      <div id="shT" class="clip" data-start="26" data-duration="2.2"></div>
-      <div id="shB" class="clip" data-start="26" data-duration="2.2"></div>
+      <div id="shT" class="clip" data-start="28.4" data-duration="2.2"></div>
+      <div id="shB" class="clip" data-start="28.4" data-duration="2.2"></div>
 
-      <div id="vig" class="clip" data-start="0" data-duration="35.4"></div>
-      <div id="grain" class="clip" data-start="0" data-duration="35.4"></div>
-      <div id="fade" class="clip" data-start="34.6" data-duration="0.8"></div>
+      <div id="vig" class="clip" data-start="0" data-duration="37.8"></div>
+      <div id="grain" class="clip" data-start="0" data-duration="37.8"></div>
+      <div id="fade" class="clip" data-start="37" data-duration="0.8"></div>
     </div>
 
     <script>
       const tl = gsap.timeline({ paused: true });
-      const $ = (s) => document.querySelector(s);
-      const CUTS = [0, 3.6, 6, 8.4, 10.8, 13.2, 15.6, 18, 20.4, 22.8, 25.2, 27.6];
-      const OUT = 27.6, END = 35.4, X = 0.3;
+      const B = 0.6;
+      const CUTS = [0, 3.6, 6, 8.4, 10.8, 13.2, 15.6, 18, 20.4, 22.8, 27.6, 30];
+      const OUT = 30, END = 37.8, X = 0.3;
+      const MON = ["#g0", "#g1", "#g2", "#g3", "#g4", "#g5", "#g6", "#g7"];
+      // element entering / leaving at each scene boundary (scene 9 is the montage)
+      const IN = ["#m0", "#m1", "#m2", "#m3", "#m4", "#m5", "#m6", "#m7", "#m8", "#g0", "#m10"];
+      const EXIT = [...IN]; EXIT[9] = "#g7";
 
       // split caption lines into chars, size each line to fit 920px
       document.querySelectorAll(".ln").forEach((ln) => {
         const txt = ln.textContent.toUpperCase();
-        const n = txt.length;
-        const small = ln.closest("#c10");
-        ln.style.fontSize = Math.min(small ? 150 : 230, Math.floor(920 / (0.5 * n))) + "px";
+        ln.style.fontSize = Math.min(230, Math.floor(920 / (0.5 * txt.length))) + "px";
         ln.textContent = "";
         if (ln.classList.contains("bar")) { const h = document.createElement("i"); h.className = "hl"; ln.appendChild(h); }
         for (const c of txt) { const s = document.createElement("span"); s.className = "ch"; s.innerHTML = c === " " ? "&nbsp;" : c; ln.appendChild(s); }
       });
 
       // ---------- media: hide incoming until its transition, slow camera drift ----------
-      for (let i = 1; i <= 10; i++) tl.set("#m" + i, { opacity: 0 }, 0);
-      const drift = [
-        { s0: 1.18, s1: 1.04 }, { s0: 1.06, s1: 1.16 }, { s0: 1.16, s1: 1.04 }, { s0: 1.04, s1: 1.14 },
-        { s0: 1.14, s1: 1.02 }, { s0: 1.02, s1: 1.14 }, { s0: 1.2, s1: 1.06 }, { s0: 1.0, s1: 1.12 },
-        { s0: 1.12, s1: 1.02 }, { s0: 1.0, s1: 1.1 }, { s0: 1.12, s1: 1.0 },
-      ];
+      for (let i = 1; i <= 10; i++) if (i !== 9) tl.set(IN[i], { opacity: 0 }, 0);
+      const drift = [[1.18, 1.04], [1.06, 1.16], [1.16, 1.04], [1.04, 1.14], [1.14, 1.02], [1.02, 1.14],
+        [1.2, 1.06], [1.0, 1.12], [1.12, 1.02], null, [1.0, 1.12]];
       drift.forEach((d, i) => {
+        if (!d) return;
         const t0 = Math.max(0, CUTS[i] - X), t1 = CUTS[i + 1] - X;
-        tl.fromTo("#m" + i, { scale: d.s0 }, { scale: d.s1, duration: t1 - t0, ease: "power2.out" }, t0);
+        tl.fromTo(IN[i], { scale: d[0] }, { scale: d[1], duration: t1 - t0, ease: "power2.out" }, t0);
+      });
+      // punch-in cut on the mid-scene beat: perspective z, so it stacks on the scale drift
+      [[0, 1.8], [1, 4.8], [2, 7.2], [3, 9.6], [4, 12.0], [5, 14.4], [6, 16.8], [8, 21.6], [10, 28.8]].forEach(([i, t]) => {
+        tl.set(IN[i], { transformPerspective: 1000, z: 0 }, 0);
+        tl.fromTo(IN[i], { z: 210 }, { z: 150, duration: CUTS[i + 1] - t, ease: "power1.out" }, t);
       });
       // welding: handheld micro-shake on rotation (keeps x/y free for transitions)
       [[0, 0, 3.6], [6, 15.6, 18]].forEach(([i, a, b]) => {
         for (let t = a, k = 0; t < b; t += 1 / 15, k++)
           tl.set("#m" + i, { rotation: Math.sin(k * 2.3) * 0.35 + Math.sin(k * 5.1) * 0.2 }, t);
+      });
+
+      // ---------- generator montage: crash zoom + whip on every beat ----------
+      MON.forEach((g, k) => {
+        const t = CUTS[9] + k * B;
+        const zoom = k % 2 ? [1.45, 1.1] : [1.0, 1.22];
+        tl.fromTo(g, { scale: zoom[0], rotation: k % 3 === 1 ? -4 : 0 }, { scale: zoom[1], rotation: 0, duration: B + (k === 7 ? 0.35 : 0), ease: "expo.out" }, t);
+        if (k % 4 === 2) tl.fromTo(g, { x: 160 }, { x: 0, duration: 0.3, ease: "expo.out" }, t);
+        if (k > 0 && k % 2 === 0) {
+          tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.18, ease: "power2.out" }, t);
+        }
+        tl.fromTo(g, { filter: "brightness(1.8) contrast(1.2)" }, { filter: "brightness(1) contrast(1)", duration: 0.25, ease: "power2.out" }, t);
       });
 
       // ---------- transitions ----------
@@ -219,25 +247,23 @@
           tl.to(a, { x: -140, duration: 0.7, ease: "expo.inOut" }, c - X);
         },
       };
-      const plan = [
-        ["flash"], ["whip", 1], ["wipe", "MOFLES"], ["iris"], ["zoom"], ["flash"],
-        ["push"], ["diag"], ["whip", -1], ["wipe", "JIREH"],
-      ];
-      plan.forEach(([k, arg], i) => T[k](CUTS[i + 1], "#m" + i, "#m" + (i + 1), arg));
+      const plan = [["flash"], ["whip", 1], ["wipe", "MOFLES"], ["iris"], ["zoom"], ["flash"], ["push"], ["diag"], ["flash"], ["zoom"]];
+      plan.forEach(([k, arg], i) => T[k](CUTS[i + 1], EXIT[i], IN[i + 1], arg));
 
       // ---------- kinetic captions ----------
       const chars = (sel) => gsap.utils.toArray(sel + " .ch");
-      const styles = ["rise", "slam", "track", "bar", "rise", "outline", "slam", "bar", "track", "rise", "stack"];
+      const styles = ["rise", "slam", "track", "bar", "rise", "outline", "slam", "bar", "track", "strobe", "rise"];
       styles.forEach((st, i) => {
         const id = "#c" + i, t = (i === 0 ? 0.55 : CUTS[i] + 0.12), out = CUTS[i + 1] - 0.34;
         tl.fromTo(id + " .kick b", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, t);
         tl.fromTo(id + " .kick span", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "expo.out" }, t + 0.1);
         const a = chars(id + " .ln.a"), b = chars(id + " .ln.b");
-        const rise = (els, at, st = 0.032) => tl.fromTo(els, { yPercent: 115, rotation: 6 }, { yPercent: 0, rotation: 0, duration: 0.7, ease: "expo.out", stagger: st }, at);
+        const rise = (els, at, sg = 0.032) => tl.fromTo(els, { yPercent: 115, rotation: 6 }, { yPercent: 0, rotation: 0, duration: 0.7, ease: "expo.out", stagger: sg }, at);
+        const slam = (els, at) => tl.fromTo(els, { scale: 2.2, opacity: 0, filter: "blur(14px)" },
+          { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "power4.out", stagger: 0.025 }, at);
         if (st === "rise" || st === "outline") { rise(a, t); rise(b, t + 0.16); }
         if (st === "slam") {
-          [a, b].forEach((els, k) => tl.fromTo(els, { scale: 2.2, opacity: 0, filter: "blur(14px)" },
-            { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "power4.out", stagger: 0.025 }, t + k * 0.2));
+          slam(a, t); slam(b, t + 0.2);
           tl.fromTo(id, { x: -10, y: 6 }, { x: 0, y: 0, duration: 0.35, ease: "elastic.out(1,0.3)" }, t + 0.25);
         }
         if (st === "track") {
@@ -251,21 +277,23 @@
           tl.fromTo(id + " .hl", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "expo.inOut" }, t + 0.12);
           rise(b, t + 0.36, 0.025);
         }
-        if (st === "stack") {
-          const lines = gsap.utils.toArray(id + " .ln");
-          lines.forEach((l, k) => rise(l.querySelectorAll(".ch"), [25.3, 25.8, 26.4][k] - 0.05, 0.022));
+        if (st === "strobe") {
+          // one letter per beat-eighth, then solid/outline flips on every montage cut
+          slam(a, CUTS[9] + 0.05);
+          rise(b, CUTS[9] + 1.25, 0.02);
+          for (let k = 1; k < 8; k++) {
+            const hollow = k % 2 === 1;
+            tl.set(a, { color: hollow ? "rgba(0,0,0,0)" : "#fff", WebkitTextStroke: hollow ? "4px #fff" : "0px #fff" }, CUTS[9] + k * B);
+            tl.fromTo(id + " .ln.a", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", transformOrigin: "left center" }, CUTS[9] + k * B);
+          }
         }
-        if (i < 10) {
-          tl.to([...a, ...b], { yPercent: -115, duration: 0.3, ease: "power3.in", stagger: 0.008 }, out);
-          tl.to(id + " .kick", { opacity: 0, duration: 0.2 }, out);
-          if (st === "bar") tl.to(id + " .hl", { scaleX: 0, transformOrigin: "right center", duration: 0.3, ease: "power3.in" }, out + 0.05);
-        } else {
-          tl.to(id, { opacity: 0, y: -60, duration: 0.35, ease: "power2.in" }, 27.2);
-        }
+        tl.to([...a, ...b], { yPercent: -115, duration: 0.3, ease: "power3.in", stagger: 0.008 }, out);
+        tl.to(id + " .kick", { opacity: 0, duration: 0.2 }, out);
+        if (st === "bar") tl.to(id + " .hl", { scaleX: 0, transformOrigin: "right center", duration: 0.3, ease: "power3.in" }, out + 0.05);
       });
 
       // ---------- HUD ----------
-      tl.fromTo("#hud", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.2);
+      tl.fromTo("#brand", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0.2);
 
       // ---------- outro ----------
       tl.fromTo("#shT", { yPercent: -100 }, { yPercent: 0, duration: 0.5, ease: "power4.in" }, OUT - 0.5);
@@ -276,23 +304,23 @@
       tl.fromTo("#lgMan", { opacity: 0, scale: 1.7, rotation: -10, filter: "blur(22px)", transformOrigin: "50% 30%" },
         { opacity: 1, scale: 1, rotation: 0, filter: "blur(0px)", duration: 1.0, ease: "expo.out" }, OUT);
       tl.fromTo("#lgMof", { opacity: 0, scale: 1.55, transformOrigin: "50% 56%" },
-        { opacity: 1, scale: 1, duration: 0.38, ease: "power4.out" }, 28.1);
-      tl.fromTo("#logo", { x: -14, y: 10 }, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1,0.25)" }, 28.15);
-      tl.fromTo("#lgJir", { opacity: 0, x: 140, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, 28.75);
-      tl.fromTo("#lgPil", { opacity: 0, scaleX: 0.05, transformOrigin: "50% 85%" }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "expo.out" }, 29.4);
-      tl.to("#lgFull", { opacity: 1, duration: 0.5, ease: "none" }, 30.1);
-      tl.set(["#lgMan", "#lgMof", "#lgJir", "#lgPil"], { opacity: 0 }, 30.62);
-      tl.fromTo("#sweep", { x: 0 }, { x: 1900, duration: 1.1, ease: "power2.inOut" }, 30.5);
-      tl.fromTo("#sweep", { x: 0 }, { x: 1900, duration: 1.1, ease: "power2.inOut", immediateRender: false }, 33.5);
-      const cta = ["#cta .c1 > div", "#cta .c2 > div", "#cta .c4 > div"];
-      cta.forEach((s, k) => tl.fromTo(s, { yPercent: 110 }, { yPercent: 0, duration: 0.8, ease: "expo.out" }, 30.2 + k * 0.22));
-      tl.fromTo("#cta .c3", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.inOut" }, 30.55);
-      tl.fromTo("#cta .c2", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power3.out" }, 33.6);
-      tl.fromTo("#fade", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power1.in" }, 34.6);
+        { opacity: 1, scale: 1, duration: 0.38, ease: "power4.out" }, OUT + 0.5);
+      tl.fromTo("#logo", { x: -14, y: 10 }, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1,0.25)" }, OUT + 0.55);
+      tl.fromTo("#lgJir", { opacity: 0, x: 140, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, OUT + 1.15);
+      tl.fromTo("#lgPil", { opacity: 0, scaleX: 0.05, transformOrigin: "50% 85%" }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "expo.out" }, OUT + 1.8);
+      tl.to("#lgFull", { opacity: 1, duration: 0.5, ease: "none" }, OUT + 2.5);
+      tl.set(["#lgMan", "#lgMof", "#lgJir", "#lgPil"], { opacity: 0 }, OUT + 3.02);
+      tl.fromTo("#sweep", { x: 0 }, { x: 1900, duration: 1.1, ease: "power2.inOut" }, OUT + 2.9);
+      tl.fromTo("#sweep", { x: 0 }, { x: 1900, duration: 1.1, ease: "power2.inOut", immediateRender: false }, OUT + 5.9);
+      ["#cta .c1 > div", "#cta .c2 > div", "#cta .c4 > div"].forEach((s, k) =>
+        tl.fromTo(s, { yPercent: 110 }, { yPercent: 0, duration: 0.8, ease: "expo.out" }, OUT + 2.6 + k * 0.22));
+      tl.fromTo("#cta .c3", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.inOut" }, OUT + 2.95);
+      tl.fromTo("#cta .c2", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power3.out" }, OUT + 6.0);
+      tl.fromTo("#fade", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power1.in" }, END - 0.8);
 
       // ---------- film grain: deterministic jitter ----------
       let s = 12345;
-      for (let t = 0, k = 0; t < END; t += 1 / 15, k++) {
+      for (let t = 0; t < END; t += 1 / 15) {
         s = (s * 1103515245 + 12345) % 2147483648;
         tl.set("#grain", { backgroundPosition: `${s % 512}px ${(s >> 9) % 512}px` }, t);
       }
