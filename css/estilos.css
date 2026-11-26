@@ -203,7 +203,7 @@ img.sk{background:linear-gradient(110deg,var(--sk-a) 30%,var(--sk-b) 50%,var(--s
 .teaser{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .teaser a{display:grid;gap:.7rem;text-decoration:none;color:#F6F1E8}
 .teaser img{--cut:12px;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--steel-2);clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));transition:filter .3s}
-.teaser span{font-weight:600;font-size:1rem;line-height:1.35}
+.teaser span{font-family:var(--f-body);font-stretch:75%;font-weight:700;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
 .teaser a:hover img{filter:brightness(1.12)}
 .teaser a:hover span{color:var(--gold-l)}
 

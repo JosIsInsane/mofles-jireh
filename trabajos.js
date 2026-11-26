@@ -11,7 +11,8 @@
    CAMPOS
    foto       Ruta de la imagen. Ej: "trabajos/mi-foto.jpg"  (obligatorio)
               Si es un video, esta foto se usa de portada.
-   titulo     Texto corto que sale debajo de la foto.            (obligatorio)
+   titulo     Describe la foto. No sale en pantalla: lo leen Google y los
+              lectores de pantalla (para personas ciegas).            (obligatorio)
    categoria  Una de estas:  "mofles"  "flexibles"  "escape"  "fabricacion"
               "resonadores"  "maquinaria"  "otros"
    video      (opcional) Ruta del video .mp4. Ej: "trabajos/video-4.mp4"

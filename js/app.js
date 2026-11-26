@@ -233,7 +233,7 @@
           ' alt="' + esc(t.titulo) + '" loading="lazy" decoding="async">' +
           (t.video ? '<span class="g-play">' + PLAY + 'Video</span>' : '') + '</span>' +
           '</button>' +
-          '<figcaption class="g-cap"><span class="g-cat">' + esc(CATEGORIAS[cat]) + '</span>' + esc(t.titulo) + '</figcaption>' +
+          '<figcaption class="g-cap g-cat">' + esc(CATEGORIAS[cat]) + (t.video ? ' · Video' : '') + '</figcaption>' +
           '</figure>';
       }).join('');
     }
@@ -278,7 +278,8 @@
       media.src = t.foto; media.alt = t.titulo;
       escena.insertBefore(media, btnAnt);
     }
-    cap.textContent = t.titulo;
+    // en pantalla solo sale la categoría; el título queda como texto alternativo de la foto
+    cap.textContent = CATEGORIAS[CATEGORIAS[t.categoria] ? t.categoria : 'otros'] + (t.video ? ' · Video' : '');
     cont.textContent = (actual + 1) + ' / ' + visibles.length;
     var uno = visibles.length < 2; btnAnt.hidden = uno; btnSig.hidden = uno;
   }
