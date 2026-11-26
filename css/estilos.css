@@ -204,7 +204,7 @@ img.sk{background:linear-gradient(110deg,var(--sk-a) 30%,var(--sk-b) 50%,var(--s
 .svc-more{margin-top:clamp(2rem,4vw,2.8rem);display:grid;grid-template-columns:auto 1fr;gap:.8rem 2rem;align-items:baseline;padding-top:1.2rem;border-top:2px solid var(--ink)}
 .svc-more h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.45rem;line-height:1}
 .svc-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
-.svc-tags li{padding:.45rem .9rem;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-weight:600;font-size:1rem;line-height:1.3}
+.svc-tags li{padding:.6rem 1rem;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-weight:600;font-size:1rem;line-height:1.3}
 /* ubicacion en fondo claro */
 .find .visit-grid{margin-bottom:clamp(2.5rem,5vw,3.5rem)}
 .find .info-list li{border-bottom-color:var(--line)}
