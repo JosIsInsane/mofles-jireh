@@ -15,6 +15,8 @@
               lectores de pantalla (para personas ciegas).            (obligatorio)
    categoria  Una de estas:  "mofles"  "flexibles"  "escape"  "fabricacion"
               "resonadores"  "maquinaria"  "otros"
+              "fabricacion" = todo lo hecho a la medida para un cliente
+              (sistema de escape, mofle, etc.).
    video      (opcional) Ruta del video .mp4. Ej: "trabajos/video-4.mp4"
 
    REGLAS PARA QUE NO SE ROMPA
