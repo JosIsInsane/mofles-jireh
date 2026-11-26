@@ -233,7 +233,7 @@
           ' alt="' + esc(t.titulo) + '" loading="lazy" decoding="async">' +
           (t.video ? '<span class="g-play">' + PLAY + 'Video</span>' : '') + '</span>' +
           '</button>' +
-          '<figcaption class="g-cap g-cat">' + esc(CATEGORIAS[cat]) + (t.video ? ' · Video' : '') + '</figcaption>' +
+          '<figcaption class="g-cap g-cat">' + esc(CATEGORIAS[cat]) + '</figcaption>' +
           '</figure>';
       }).join('');
     }
