@@ -40,29 +40,6 @@
     window.addEventListener('scroll', marcar, { passive: true }); marcar();
   }
 
-  /* ---------- "Abierto ahora": horario de lunes a sábado, 7 a.m. a 5 p.m., hora de Honduras ---------- */
-  var ABRE = 7, CIERRA = 17;
-  var estado = $('estado'), estadoTxt = $('estadoTxt'), estadoSub = $('estadoSub');
-  function pintarEstado() {
-    if (!estado) return;
-    var hn = new Date(Date.now() - 6 * 3600 * 1000);   // Honduras es UTC-6 todo el año
-    var dia = hn.getUTCDay(), hora = hn.getUTCHours() + hn.getUTCMinutes() / 60;
-    var trabaja = dia >= 1 && dia <= 6;
-    var abierto = trabaja && hora >= ABRE && hora < CIERRA;
-    estado.classList.toggle('abierto', abierto);
-    estado.classList.toggle('cerrado', !abierto);
-    if (abierto) {
-      estadoTxt.textContent = 'Abierto ahora';
-      estadoSub.textContent = 'Cerramos a las 5:00 p.m.';
-    } else {
-      estadoTxt.textContent = 'Cerrado ahora';
-      if (trabaja && hora < ABRE) estadoSub.textContent = 'Abrimos hoy a las 7:00 a.m.';
-      else if (dia === 6 || dia === 0) estadoSub.textContent = 'Abrimos el lunes a las 7:00 a.m.';
-      else estadoSub.textContent = 'Abrimos mañana a las 7:00 a.m.';
-    }
-  }
-  pintarEstado(); setInterval(pintarEstado, 60000);
-
   /* ---------- Soldadura animada en la foto de portada ----------
      Chispas y destello dibujados encima de la foto, saliendo del punto donde se suelda.
      Si cambias la foto, cambia PUNTO_X y PUNTO_Y (en píxeles de la foto original). */
@@ -171,6 +148,45 @@
     Object.keys(mapa).forEach(function (id) { obs.observe(document.getElementById(id)); });
   }
 
+  /* ---------- Fotos: brillo de carga y aviso si no cargan ----------
+     Mientras una foto carga se ve un bloque gris con brillo (skeleton).
+     Si la foto no llega (mala señal o archivo que falta), en su lugar
+     sale un recuadro con el aviso, del mismo tamaño, para que nada se mueva. */
+  function fallaFoto(img) {
+    var caja = document.createElement('div');
+    caja.className = 'img-falla';
+    caja.setAttribute('role', 'img');
+    caja.setAttribute('aria-label', 'No se pudo cargar la foto: ' + (img.alt || ''));
+    caja.innerHTML = '<svg class="ico" aria-hidden="true"><use href="#i-foto"/></svg><span>No se pudo cargar la foto</span>';
+    // misma proporción que tenía la foto (la del CSS si tiene, si no la de width/height)
+    var ar = getComputedStyle(img).aspectRatio, w = +img.getAttribute('width'), h = +img.getAttribute('height');
+    if (ar && ar.indexOf('auto') < 0) caja.style.aspectRatio = ar;
+    else if (w && h) caja.style.aspectRatio = w + ' / ' + h;
+    img.replaceWith(caja);
+  }
+  function seguirFoto(img) {
+    if (img.complete && img.naturalWidth) { img.classList.add('ok'); return; }
+    img.classList.add('sk');
+    img.addEventListener('load', function () { img.classList.remove('sk'); img.classList.add('ok'); }, { once: true });
+    // si falla la versión chica (-640), se intenta una vez con la foto original
+    var conError = function () {
+      if (img.hasAttribute('srcset')) {
+        img.removeAttribute('srcset');
+        img.addEventListener('error', conError, { once: true });
+        return;
+      }
+      fallaFoto(img);
+    };
+    if (img.complete) conError(); else img.addEventListener('error', conError, { once: true });
+  }
+  // versiones chicas de una foto: "trabajos/x.webp" -> x-640.webp, x-960.webp y la original de 1280
+  function juegoFotos(src) {
+    if (!/\.webp$/.test(src) || /-(640|960)\.webp$/.test(src)) return '';
+    var base = src.replace(/\.webp$/, '');
+    return base + '-640.webp 640w, ' + base + '-960.webp 960w, ' + src + ' 1280w';
+  }
+  document.querySelectorAll('main img').forEach(seguirFoto);
+
   /* ---------- Galería ---------- */
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var datos = (window.TRABAJOS || []).filter(function (t) { return t && t.foto; });
@@ -201,28 +217,26 @@
   function pintar() {
     if (!gal) return;
     var todos = lista();
-    visibles = expandido ? todos : todos.slice(0, MOSTRAR_INICIO);
+    visibles = (expandido || !verMas) ? todos : todos.slice(0, MOSTRAR_INICIO);
     if (!todos.length) {
       gal.innerHTML = '<p class="g-empty">Todavía no hay trabajos en esta categoría.</p>';
     } else {
       gal.innerHTML = visibles.map(function (t, i) {
         var cat = CATEGORIAS[t.categoria] ? t.categoria : 'otros';
-        var cls = 'g-item' + (t.grande ? ' grande' : '') + (t.video ? ' is-video' : '');
+        var cls = 'g-item' + (t.video ? ' is-video' : '');
         var etiqueta = t.video ? 'Ver video: ' : 'Ver foto: ';
         return '<figure class="' + cls + '" data-cat="' + cat + '">' +
           '<button type="button" class="g-btn" data-i="' + i + '" aria-label="' + esc(etiqueta + t.titulo) + '">' +
-          '<img src="' + esc(t.foto) + '" alt="' + esc(t.titulo) + '" loading="lazy" decoding="async">' +
-          (t.video ? '<span class="g-play">' + PLAY + '</span>' : '') +
+          '<span class="g-img"><img src="' + esc(t.foto) + '"' +
+          (juegoFotos(t.foto) ? ' srcset="' + esc(juegoFotos(t.foto)) + '" sizes="(max-width:760px) 100vw, (max-width:980px) 50vw, 400px"' : '') +
+          ' alt="' + esc(t.titulo) + '" loading="lazy" decoding="async">' +
+          (t.video ? '<span class="g-play">' + PLAY + 'Video</span>' : '') + '</span>' +
           '</button>' +
-          '<figcaption class="g-cap">' + (t.video ? '<span class="g-tag">Video</span>' : '') + esc(t.titulo) + '</figcaption>' +
+          '<figcaption class="g-cap"><span class="g-cat">' + esc(CATEGORIAS[cat]) + '</span>' + esc(t.titulo) + '</figcaption>' +
           '</figure>';
       }).join('');
     }
-    // quita el brillo de carga cuando cada foto termina de cargar
-    gal.querySelectorAll('img').forEach(function (img) {
-      var listo = function () { img.closest('.g-item').classList.add('ok'); };
-      if (img.complete) listo(); else { img.addEventListener('load', listo); img.addEventListener('error', listo); }
-    });
+    gal.querySelectorAll('img').forEach(seguirFoto);
     if (verMas) {
       var resto = todos.length - visibles.length;
       verMas.hidden = resto <= 0;
@@ -319,5 +333,19 @@
         '</figure>';
     }).join('');
     if (vacio) vacio.textContent = '¿Ya trajiste tu carro? Cuéntanos cómo te fue.';
+  } else if (listaRes) {
+    // sin reseñas todavía: la sección se vuelve una franja corta que pide la reseña
+    var secRes = $('resenas'); if (secRes) secRes.classList.add('vacia');
   }
+
+  /* ---------- Mapa: se carga al tocar "Ver mapa aquí" ---------- */
+  var mapa = $('mapa'), verMapa = $('verMapa');
+  if (mapa && verMapa) verMapa.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = mapa.getAttribute('data-src');
+    f.title = 'Mapa de Mofles Jireh';
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    mapa.innerHTML = ''; mapa.appendChild(f); mapa.classList.add('cargado');
+    f.focus();
+  });
 })();

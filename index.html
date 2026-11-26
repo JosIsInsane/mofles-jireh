@@ -19,8 +19,8 @@
 <link rel="apple-touch-icon" href="img/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
-<link rel="preload" as="image" href="trabajos/mofle-nuevo-chispas.webp">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="preload" as="image" href="trabajos/mofle-nuevo-chispas.webp" imagesrcset="trabajos/mofle-nuevo-chispas-640.webp 640w, trabajos/mofle-nuevo-chispas-960.webp 960w, trabajos/mofle-nuevo-chispas.webp 1280w" imagesizes="(max-width:980px) 100vw, 600px">
 <link rel="stylesheet" href="css/estilos.css">
 <script type="application/ld+json">
 {
@@ -64,6 +64,7 @@
   <symbol id="i-map" viewBox="0 0 512 512"><path d="M512 96c0 50.2-59.1 125.1-84.6 155c-3.8 4.4-9.4 6.1-14.5 5H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c53 0 96 43 96 96s-43 96-96 96H139.6c8.7-9.9 19.3-22.6 30-36.8c6.3-8.4 12.8-17.6 19-27.2H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320c-53 0-96-43-96-96s43-96 96-96h39.8c-21-31.5-39.8-67.7-39.8-96c0-53 43-96 96-96s96 43 96 96zM117.1 489.1c-3.8 4.3-7.2 8.1-10.1 11.3l-1.8 2-.2-.2c-6 4.6-14.6 4-20-1.8C59.8 473 0 402.5 0 352c0-53 43-96 96-96s96 43 96 96c0 30-21.1 67-43.5 97.9c-10.7 14.7-21.7 28-30.8 38.5l-.6 .7zM128 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM416 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol>
   <symbol id="i-star" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></symbol>
+  <symbol id="i-foto" viewBox="0 0 512 512"><path d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></symbol>
 </svg>
 
 <header class="nav" id="nav">
@@ -93,8 +94,8 @@
     <div class="hero-in">
       <div class="hero-copy">
         <h1>
-          <span class="eyebrow">Mofles, escapes y manifolds · San Pedro Sula</span>
           <span class="display">Que tu carro <em>suene</em> como debe.</span>
+          <span class="h1-sub">Taller de mofles, escapes y manifolds en San Pedro Sula</span>
         </h1>
         <p class="lead">Reparamos, cambiamos y fabricamos todo el sistema de escape, con opciones según tu presupuesto. ¡Una bendición para tu auto!</p>
         <div class="hero-ctas">
@@ -106,16 +107,11 @@
 
       <figure class="hero-art">
         <div class="shot" id="soldadura">
-          <img src="trabajos/mofle-nuevo-chispas.webp" alt="Soldando un mofle nuevo debajo de un carro en el taller, con chispas" width="1280" height="960" fetchpriority="high">
+          <img src="trabajos/mofle-nuevo-chispas.webp" srcset="trabajos/mofle-nuevo-chispas-640.webp 640w, trabajos/mofle-nuevo-chispas-960.webp 960w, trabajos/mofle-nuevo-chispas.webp 1280w" sizes="(max-width:980px) 100vw, 600px" alt="Soldando un mofle nuevo debajo de un carro en el taller, con chispas" width="1280" height="960" fetchpriority="high">
           <div class="flash" id="destello" aria-hidden="true"></div>
           <canvas id="chispas" aria-hidden="true"></canvas>
-          <span class="mark tl" aria-hidden="true"></span><span class="mark tr" aria-hidden="true"></span><span class="mark bl" aria-hidden="true"></span><span class="mark br" aria-hidden="true"></span>
         </div>
-        <figcaption class="shot-tag"><span class="rec" aria-hidden="true"></span>Soldando un mofle nuevo en el taller</figcaption>
-        <div class="status" id="estado" aria-live="polite">
-          <span class="dot"></span>
-          <span><strong id="estadoTxt">Lunes a sábado</strong><small id="estadoSub">7:00 a.m. – 5:00 p.m.</small></span>
-        </div>
+        <p class="status"><strong>Lunes a sábado</strong><small>7:00 a.m. – 5:00 p.m.</small></p>
       </figure>
     </div>
 
@@ -130,23 +126,22 @@
   <section class="sec light" id="servicios">
     <div class="wrap">
       <div class="sec-head">
-        <span class="kicker">Servicios</span>
-        <h2>Todo el sistema de escape, <em>en un solo taller</em></h2>
+        <h2>Todo el sistema de escape en un solo taller</h2>
         <p>Mofles (silenciadores), flexibles, resonadores y manifolds: desde un hule flojo hasta un escape completo hecho a la medida. Toca un servicio para cotizarlo por WhatsApp.</p>
       </div>
       <div class="svc-grid">
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20o%20reparaci%C3%B3n%20de%20mofle" target="_blank" rel="noopener"><span class="svc-n">01</span><h3>Cambio y reparación de mofles</h3><p>Soldamos roturas, reconstruimos o instalamos un mofle nuevo.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20de%20flexible" target="_blank" rel="noopener"><span class="svc-n">02</span><h3>Cambio de flexibles</h3><p>Reemplazo del flexible roto o con fuga, soldado y alineado.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20resonador%20o%20bazuca" target="_blank" rel="noopener"><span class="svc-n">03</span><h3>Resonadores y bazucas</h3><p>Instalación y cambio para controlar o modificar el sonido.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20modificaci%C3%B3n%20del%20escape" target="_blank" rel="noopener"><span class="svc-n">04</span><h3>Modificaciones del escape</h3><p>Cambios de tubería, salidas y recorrido del sistema de escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20reparaci%C3%B3n%20de%20manifold" target="_blank" rel="noopener"><span class="svc-n">05</span><h3>Manifolds</h3><p>Reparación de manifolds y de sus uniones con el escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20trabajo%20para%20maquinaria%20pesada" target="_blank" rel="noopener"><span class="svc-n">06</span><h3>Maquinaria pesada</h3><p>Fabricación de mofles y piezas varias para maquinaria pesada.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20de%20hules%20y%20soportes" target="_blank" rel="noopener"><span class="svc-n">07</span><h3>Hules y soportes</h3><p>Cambio de hules y soportes para que el escape no golpee ni vibre.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20revisi%C3%B3n%20del%20sistema%20de%20escape" target="_blank" rel="noopener"><span class="svc-n">08</span><h3>Revisión del sistema</h3><p>Revisamos todo el escape, incluidas las planchas, y te decimos qué necesita.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20instalaci%C3%B3n%20de%20piezas%20del%20escape" target="_blank" rel="noopener"><span class="svc-n">09</span><h3>Instalaciones en general</h3><p>Instalamos todo tipo de piezas del sistema de escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20o%20reparaci%C3%B3n%20de%20mofle" target="_blank" rel="noopener"><h3>Cambio y reparación de mofles</h3><p>Soldamos roturas, reconstruimos o instalamos un mofle nuevo.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20de%20flexible" target="_blank" rel="noopener"><h3>Cambio de flexibles</h3><p>Reemplazo del flexible roto o con fuga, soldado y alineado.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20resonador%20o%20bazuca" target="_blank" rel="noopener"><h3>Resonadores y bazucas</h3><p>Instalación y cambio para controlar o modificar el sonido.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20modificaci%C3%B3n%20del%20escape" target="_blank" rel="noopener"><h3>Modificaciones del escape</h3><p>Cambios de tubería, salidas y recorrido del sistema de escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20reparaci%C3%B3n%20de%20manifold" target="_blank" rel="noopener"><h3>Manifolds</h3><p>Reparación de manifolds y de sus uniones con el escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20trabajo%20para%20maquinaria%20pesada" target="_blank" rel="noopener"><h3>Maquinaria pesada</h3><p>Fabricación de mofles y piezas varias para maquinaria pesada.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20cambio%20de%20hules%20y%20soportes" target="_blank" rel="noopener"><h3>Hules y soportes</h3><p>Cambio de hules y soportes para que el escape no golpee ni vibre.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20revisi%C3%B3n%20del%20sistema%20de%20escape" target="_blank" rel="noopener"><h3>Revisión del sistema</h3><p>Revisamos todo el escape, incluidas las planchas, y te decimos qué necesita.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="svc" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20quiero%20cotizar%3A%20instalaci%C3%B3n%20de%20piezas%20del%20escape" target="_blank" rel="noopener"><h3>Instalaciones en general</h3><p>Instalamos todo tipo de piezas del sistema de escape.</p><span class="svc-go">Cotizar <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
       </div>
       <div class="svc-note">
-        <p>¿No ves lo que necesitas? Mándanos una <strong>foto o video</strong> del problema y te decimos qué hay que hacer y cuánto cuesta.</p>
+        <p>¿No ves lo que necesitas? Mándanos una <strong>foto o video</strong> del problema y te decimos qué puede necesitar y lo revisamos en el taller.</p>
         <a class="btn btn-wa" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20les%20mando%20foto%20del%20problema%20de%20mi%20carro" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Mandar foto</a>
       </div>
     </div>
@@ -156,14 +151,13 @@
   <section class="sec dark repair">
     <div class="wrap repair-grid">
       <div class="sec-head">
-        <span class="kicker">A tu presupuesto</span>
         <h2>Si se puede reparar, <em>no te lo cambiamos.</em></h2>
-        <p>Muchos mofles se pueden soldar y reconstruir. Antes de venderte una pieza nueva, revisamos si la tuya tiene arreglo y te damos las dos opciones con su precio.</p>
+        <p>Muchos mofles se pueden soldar y reconstruir. Antes de venderte una pieza nueva, revisamos si la tuya tiene arreglo y te explicamos las dos opciones.</p>
         <a class="btn btn-gold" href="https://wa.me/50495494420?text=Hola%20Mofles%20Jireh%2C%20%C2%BFmi%20mofle%20se%20puede%20reparar%3F%20Les%20mando%20foto" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> ¿El mío tiene arreglo?</a>
       </div>
       <div class="pair">
-        <figure><img src="trabajos/mofle-roto.webp" alt="Mofle roto visto debajo de un carro, con una rajadura a lo largo" width="1280" height="960" loading="lazy"><figcaption><span>Así llegan</span>Mofle con rajadura, debajo del carro</figcaption></figure>
-        <figure><img src="trabajos/mofle-reparado.webp" alt="Mofle reconstruido con soldadura nueva en la salida, sobre la mesa del taller" width="1280" height="960" loading="lazy"><figcaption><span>Así se reparan</span>Mofle reconstruido en la mesa del taller</figcaption></figure>
+        <figure><img src="trabajos/mofle-roto.webp" srcset="trabajos/mofle-roto-640.webp 640w, trabajos/mofle-roto-960.webp 960w, trabajos/mofle-roto.webp 1280w" sizes="(max-width:980px) 50vw, 300px" alt="Mofle roto visto debajo de un carro, con una rajadura a lo largo" width="1280" height="960" loading="lazy"><figcaption><span>Así llegan</span>Mofle con rajadura, debajo del carro</figcaption></figure>
+        <figure><img src="trabajos/mofle-reparado.webp" srcset="trabajos/mofle-reparado-640.webp 640w, trabajos/mofle-reparado-960.webp 960w, trabajos/mofle-reparado.webp 1280w" sizes="(max-width:980px) 50vw, 300px" alt="Mofle reconstruido con soldadura nueva en la salida, sobre la mesa del taller" width="1280" height="960" loading="lazy"><figcaption><span>Así se reparan</span>Mofle reconstruido en la mesa del taller</figcaption></figure>
       </div>
     </div>
   </section>
@@ -171,46 +165,45 @@
   <!-- ============ CÓMO FUNCIONA ============ -->
   <section class="sec cream" id="proceso">
     <div class="wrap">
-      <div class="sec-head center">
-        <span class="kicker">Proceso</span>
-        <h2>De la foto <em>al carro listo</em></h2>
+      <div class="sec-head">
+        <h2>Cómo cotizar</h2>
       </div>
       <ol class="steps">
         <li><h3>Mándanos foto o video</h3><p>Por WhatsApp, del ruido, la fuga o la pieza dañada.</p></li>
-        <li><h3>Te damos precio y opciones</h3><p>Te decimos si conviene reparar o cambiar, según tu presupuesto.</p></li>
+        <li><h3>Te orientamos por WhatsApp</h3><p>Te decimos si conviene reparar o cambiar, según tu presupuesto.</p></li>
         <li><h3>Traes tu carro al taller</h3><p>Lunes a sábado, de 7:00 a.m. a 5:00 p.m.</p></li>
       </ol>
     </div>
   </section>
 
-  <!-- ============ TRABAJOS (se llenan desde trabajos.js) ============ -->
+  <!-- ============ TRABAJOS (adelanto; la galería completa está en galeria.html) ============ -->
   <section class="sec dark work" id="trabajos">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Trabajos</span>
-        <h2>Así trabajamos <em>en el taller</em></h2>
-        <p>Fotos y videos reales de carros que pasaron por Mofles Jireh. Toca una foto para verla en grande.</p>
+      <div class="work-head">
+        <div class="sec-head">
+          <h2>Trabajos recientes</h2>
+          <p>Fotos reales de carros que pasaron por el taller.</p>
+        </div>
+        <a class="btn btn-line" href="galeria">Ver todos los trabajos <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="filters" id="filtros" role="group" aria-label="Filtrar trabajos"></div>
-      <div class="gallery" id="galeria" aria-live="polite"></div>
-      <div class="work-foot">
-        <p>Más trabajos en nuestra página de Facebook.</p>
-        <button class="btn btn-line more" type="button" id="verMas" hidden>Ver más trabajos</button>
-        <a class="btn btn-gold" href="https://www.facebook.com/profile.php?id=61570122182302" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-fb"/></svg> Ver en Facebook</a>
-      </div>
+      <ul class="teaser">
+        <li><a href="galeria"><img src="trabajos/soldadura-toyota.webp" srcset="trabajos/soldadura-toyota-640.webp 640w, trabajos/soldadura-toyota-960.webp 960w, trabajos/soldadura-toyota.webp 1280w" sizes="(max-width:980px) 50vw, 300px" alt="Soldando el escape de una camioneta Toyota por debajo, con chispas" loading="lazy" width="1280" height="960"><span>Reparación en camioneta Toyota</span></a></li>
+        <li><a href="galeria"><img src="trabajos/soldando-mofle.webp" srcset="trabajos/soldando-mofle-640.webp 640w, trabajos/soldando-mofle-960.webp 960w, trabajos/soldando-mofle.webp 1280w" sizes="(max-width:980px) 50vw, 300px" alt="Soldando la salida de un mofle sobre la mesa del taller" loading="lazy" width="1280" height="960"><span>Soldadura de salida en mesa</span></a></li>
+        <li><a href="galeria"><img src="trabajos/flexible-instalado.webp" srcset="trabajos/flexible-instalado-640.webp 640w, trabajos/flexible-instalado-960.webp 960w, trabajos/flexible-instalado.webp 1280w" sizes="(max-width:980px) 50vw, 300px" alt="Flexible nuevo instalado debajo de un carro" loading="lazy" width="1280" height="960"><span>Cambio de flexible</span></a></li>
+        <li><a href="galeria"><img src="trabajos/mofle-instalado.webp" srcset="trabajos/mofle-instalado-640.webp 640w, trabajos/mofle-instalado-960.webp 960w, trabajos/mofle-instalado.webp 1280w" sizes="(max-width:980px) 50vw, 300px" alt="Mofle nuevo instalado debajo de un carro" loading="lazy" width="1280" height="960"><span>Mofle instalado</span></a></li>
+      </ul>
     </div>
   </section>
 
   <!-- ============ RESEÑAS (se llenan desde resenas.js) ============ -->
   <section class="sec light" id="resenas">
     <div class="wrap">
-      <div class="sec-head center">
-        <span class="kicker">Reseñas</span>
-        <h2>Lo que dicen <em>nuestros clientes</em></h2>
+      <div class="sec-head">
+        <h2>Reseñas de clientes</h2>
       </div>
       <div class="reviews" id="listaResenas"></div>
       <div class="review-cta">
-        <p id="resenasVacio">¿Ya trajiste tu carro a Mofles Jireh? Tu opinión ayuda a otros conductores de San Pedro Sula a encontrarnos.</p>
+        <p id="resenasVacio"><strong class="rv-t">¿Ya trajiste tu carro?</strong>Tu reseña en Google ayuda a otros conductores de San Pedro Sula a encontrar el taller.</p>
         <div class="review-links">
           <a class="btn btn-dark" href="https://share.google/jwrLP9QqdyHwowMaO" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg> Dejar reseña en Google</a>
           <a class="btn btn-outline" href="https://www.facebook.com/profile.php?id=61570122182302" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-fb"/></svg> Opinar en Facebook</a>
@@ -223,8 +216,7 @@
   <section class="sec cream find" id="visitanos">
     <div class="wrap">
       <div class="sec-head">
-        <span class="kicker">Cómo llegar</span>
-        <h2>Así <em>nos encuentras</em></h2>
+        <h2>Cómo llegar al taller</h2>
         <p>Estamos sobre la Avenida Juan Pablo II, frente a Panadería PANIFER. Busca el rótulo amarillo de <strong>SILENCIADORES</strong> y los mofles exhibidos en la acera.</p>
       </div>
       <div class="find-grid">
@@ -244,8 +236,7 @@
   <section class="sec dark visit" id="ubicacion">
     <div class="wrap visit-grid">
       <div class="visit-info">
-        <span class="kicker">Visítanos</span>
-        <h2>Estamos en la <em>Juan Pablo II</em></h2>
+        <h2>Estamos en la Juan Pablo II</h2>
         <ul class="info-list">
           <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>Dirección</strong><span>Avenida Juan Pablo II, frente a Panadería PANIFER, San Pedro Sula</span></div></li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Horario</strong><span>Lunes a sábado, 7:00 a.m. – 5:00 p.m.</span></div></li>
@@ -256,8 +247,14 @@
           <a class="btn btn-line" href="tel:+50495494420"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg> Llamar</a>
         </div>
       </div>
-      <div class="map">
-        <iframe src="https://www.google.com/maps?q=Mofles%20Jireh%2C%20Avenida%20Juan%20Pablo%20II%2C%20San%20Pedro%20Sula&z=17&output=embed" title="Mapa de Mofles Jireh" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- El mapa de Google se carga solo si la persona lo pide (más rápido y sin cookies de Google al entrar) -->
+      <div class="map" id="mapa" data-src="https://www.google.com/maps?q=Mofles%20Jireh%2C%20Avenida%20Juan%20Pablo%20II%2C%20San%20Pedro%20Sula&amp;z=17&amp;output=embed">
+        <img src="img/taller/fachada-acera.webp" alt="" width="680" height="510" loading="lazy">
+        <div class="map-cover">
+          <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>
+          <p>Avenida Juan Pablo II, frente a Panadería PANIFER</p>
+          <button class="btn btn-gold" type="button" id="verMapa">Ver mapa aquí</button>
+        </div>
       </div>
     </div>
   </section>

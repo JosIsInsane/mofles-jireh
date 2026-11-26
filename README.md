@@ -33,7 +33,7 @@ Página del taller Mofles Jireh (San Pedro Sula). Es una página estática: solo
 { foto: "trabajos/video-4-portada.jpg", titulo: "Cambio de flexible", categoria: "flexibles", video: "trabajos/video-4.mp4" },
 ```
 
-**Foto más grande:** agrega `grande: true` al final de la línea.
+**Fotos livianas (opcional):** si junto a `mi-foto.webp` subes `mi-foto-640.webp` y `mi-foto-960.webp` (la misma foto a 640 y 960 px de ancho), la página carga más rápido en celulares. Si no las subes, usa la original y todo funciona igual.
 
 **Categorías disponibles:** `mofles`, `flexibles`, `escape`, `resonadores`, `maquinaria`, `otros`. Los filtros de la galería se crean solos según las categorías que uses.
 

@@ -11,11 +11,10 @@
    CAMPOS
    foto       Ruta de la imagen. Ej: "trabajos/mi-foto.jpg"  (obligatorio)
               Si es un video, esta foto se usa de portada.
-   titulo     Texto corto que sale sobre la foto.            (obligatorio)
+   titulo     Texto corto que sale debajo de la foto.            (obligatorio)
    categoria  Una de estas:  "mofles"  "flexibles"  "escape"
               "resonadores"  "maquinaria"  "otros"
    video      (opcional) Ruta del video .mp4. Ej: "trabajos/video-4.mp4"
-   grande     (opcional) Pon  grande: true  para que salga del doble.
 
    REGLAS PARA QUE NO SE ROMPA
    - Cada línea va entre llaves { } y termina con coma.
