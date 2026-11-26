@@ -324,16 +324,20 @@
   /* ---------- Reseñas (se editan en resenas.js) ---------- */
   var listaRes = $('listaResenas'), vacio = $('resenasVacio');
   var resenas = (window.RESENAS || []).filter(function (r) { return r && r.texto && r.nombre; });
+  var RESENAS_GOOGLE = 'https://share.google/ZDbmx4TkqxGoQE0gU';
   var ESTRELLA = '<svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>';
   if (listaRes && resenas.length) {
     listaRes.innerHTML = resenas.map(function (r) {
       // las estrellas solo salen si se copiaron de la reseña real
       var n = r.estrellas ? Math.max(1, Math.min(5, Math.round(r.estrellas))) : 0;
-      return '<figure class="review">' +
+      // cada tarjeta abre su reseña en Google (enlace propio) o la lista de reseñas
+      var url = /^https:\/\//.test(r.enlace || '') ? r.enlace : RESENAS_GOOGLE;
+      return '<a class="review-a" href="' + esc(url) + '" target="_blank" rel="noopener" aria-label="Ver la reseña de ' + esc(r.nombre) + ' en Google">' +
+        '<figure class="review">' +
         (n ? '<div class="stars" role="img" aria-label="' + n + ' de 5 estrellas">' + new Array(n + 1).join(ESTRELLA) + '</div>' : '') +
         '<blockquote>“' + esc(r.texto) + '”</blockquote>' +
-        '<figcaption><strong>' + esc(r.nombre) + '</strong>' + (r.fuente ? ' · ' + esc(r.fuente) : '') + '</figcaption>' +
-        '</figure>';
+        '<figcaption><strong>' + esc(r.nombre) + '</strong>' + (r.fuente ? ' · ' + esc(r.fuente) : '') + '<span class="rv-go">Ver en Google <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></figcaption>' +
+        '</figure></a>';
     }).join('');
     if (vacio) vacio.textContent = '¿Ya trajiste tu carro? Cuéntanos cómo te fue.';
   } else if (listaRes) {

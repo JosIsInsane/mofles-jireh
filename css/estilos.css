@@ -250,7 +250,13 @@ img.sk{background:linear-gradient(110deg,var(--sk-a) 30%,var(--sk-b) 50%,var(--s
 /* ---------- RESEÑAS ---------- */
 /* columnas tipo mosaico: las reseñas cortas no dejan huecos */
 .reviews{columns:3 280px;column-gap:12px}
-.reviews .review{break-inside:avoid;margin-bottom:12px}
+.reviews .review-a{display:block;break-inside:avoid;margin-bottom:12px;color:inherit;text-decoration:none}
+.review{transition:box-shadow .2s}
+.review-a:hover .review,.review-a:focus-visible .review{box-shadow:inset 0 0 0 2px var(--gold)}
+.review-a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.review figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem}
+.rv-go{margin-left:auto;display:inline-flex;align-items:center;gap:.3rem;color:var(--ink);font-weight:600}
+.review-a:hover .rv-go{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
 .sec-head .nota{color:var(--ink);font-weight:800}
 .reviews:empty{display:none}
 .review{--cut:14px;margin:0;display:grid;gap:1rem;align-content:start;background:#fff;box-shadow:inset 0 0 0 1px var(--line);padding:1.7rem 1.5rem;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
@@ -352,7 +358,7 @@ footer small{flex-basis:100%;font-size:.95rem}
   .repair-grid,.visit-grid{grid-template-columns:1fr}
   .pair{justify-self:stretch;max-width:none}
   .reviews{columns:1}
-  .review:nth-child(n+4){display:none}
+  .review-a:nth-child(n+4){display:none}
 }
 @media (max-width:760px){
   :root{--dock-h:calc(68px + env(safe-area-inset-bottom,0px))}

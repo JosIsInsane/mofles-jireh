@@ -13,6 +13,9 @@
    estrellas  (opcional) Número del 1 al 5, tal como está en Google.
               Si no lo pones, no se muestran estrellas.
    fuente     De dónde viene: "Google" o "Facebook".
+   enlace     (opcional) Enlace a esa reseña en Google: en Google Maps toca
+              Compartir en la reseña y pega aquí el enlace. Si no lo pones,
+              la tarjeta abre la lista de reseñas del taller.
 
    EJEMPLO (quita las dos barras // del inicio para usarla):
    // { texto: "Me repararon el mofle en vez de cambiarlo, buen precio.", nombre: "Carlos M.", estrellas: 5, fuente: "Google" },
