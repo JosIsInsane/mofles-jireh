@@ -13,3 +13,7 @@
   Cache-Control: public, max-age=86400
 /video/*
   Cache-Control: public, max-age=2592000
+/trabajos.js
+  Cache-Control: public, max-age=0, must-revalidate
+/resenas.js
+  Cache-Control: public, max-age=0, must-revalidate
