@@ -327,9 +327,10 @@
   var ESTRELLA = '<svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>';
   if (listaRes && resenas.length) {
     listaRes.innerHTML = resenas.map(function (r) {
-      var n = Math.max(1, Math.min(5, Math.round(r.estrellas || 5)));
+      // las estrellas solo salen si se copiaron de la reseña real
+      var n = r.estrellas ? Math.max(1, Math.min(5, Math.round(r.estrellas))) : 0;
       return '<figure class="review">' +
-        '<div class="stars" role="img" aria-label="' + n + ' de 5 estrellas">' + new Array(n + 1).join(ESTRELLA) + '</div>' +
+        (n ? '<div class="stars" role="img" aria-label="' + n + ' de 5 estrellas">' + new Array(n + 1).join(ESTRELLA) + '</div>' : '') +
         '<blockquote>“' + esc(r.texto) + '”</blockquote>' +
         '<figcaption><strong>' + esc(r.nombre) + '</strong>' + (r.fuente ? ' · ' + esc(r.fuente) : '') + '</figcaption>' +
         '</figure>';

@@ -253,6 +253,7 @@ img.sk{background:linear-gradient(110deg,var(--sk-a) 30%,var(--sk-b) 50%,var(--s
 .review{--cut:14px;margin:0;display:grid;gap:1rem;align-content:start;background:#fff;box-shadow:inset 0 0 0 1px var(--line);padding:1.7rem 1.5rem;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
 .review .stars{display:flex;gap:.2rem;color:var(--gold);font-size:1.05rem}
 .review blockquote{margin:0;font-size:1.15rem;line-height:1.5;color:var(--ink)}
+.sec-head .lnk{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:4px;white-space:nowrap}
 .review figcaption{font-family:var(--f-mono);font-size:.875rem;color:var(--muted)}
 .review figcaption strong{color:var(--ink);font-weight:600}
 .review-cta{margin-top:2rem;display:grid;gap:1.2rem;justify-items:start}
@@ -348,6 +349,7 @@ footer small{flex-basis:100%;font-size:.95rem}
   .repair-grid,.visit-grid{grid-template-columns:1fr}
   .pair{justify-self:stretch;max-width:none}
   .reviews{grid-template-columns:1fr}
+  .review:nth-child(n+4){display:none}
 }
 @media (max-width:760px){
   :root{--dock-h:calc(68px + env(safe-area-inset-bottom,0px))}
