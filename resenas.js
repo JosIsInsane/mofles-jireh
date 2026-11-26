@@ -29,6 +29,8 @@ window.RESENAS = [
   { texto: "La rapidez con la que te realizan el trabajo y la facilidad de pago un 10/10", nombre: "Orlando I.", estrellas: 5, fuente: "Google" },
   { texto: "Siempre me ha dejando un trabajo bien hecho y en buenas condiciones", nombre: "Genesis C.", estrellas: 5, fuente: "Google" },
   { texto: "super cómodo y rápido, los mejores sin duda 😌.", nombre: "Ariana M.", estrellas: 5, fuente: "Google" },
+  { texto: "Llevé mi auto porque tenía un problema con el escape y quedé muy satisfecho con el trabajo que realizaron. En Mofles Jireh me atendieron de manera profesional, rápida y con precios justos. Se nota que saben lo que hacen y utilizan materiales de buena calidad. Además, explican todo con claridad y cumplen con los tiempos de entrega. Sin duda los recomiendo al 100% si buscas un lugar confiable para reparar o cambiar el mofle de tu vehículo. ¡Muy buen servicio y atención al cliente! 🚗💨", nombre: "Edward O.", estrellas: 5, fuente: "Google" },
+  { texto: "Las mejores modificaciones a buen precio", nombre: "Javier M.", estrellas: 5, fuente: "Google" },
   { texto: "Rapidez y eficiencia", nombre: "Lourdes C.", estrellas: 5, fuente: "Google" },
   { texto: "Muy buen servicio y amables", nombre: "Kamila S.", estrellas: 5, fuente: "Google" },
   { texto: "Muy buen servicio", nombre: "Gerson G.", estrellas: 5, fuente: "Google" },
