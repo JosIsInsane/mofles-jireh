@@ -23,10 +23,13 @@
    ===================================================================== */
 
 window.RESENAS = [
-  { texto: "EXCELENTE TRABAJO, MUY AMABLE EL PERSONAL, MI CARRO QUEDO SIN FALLA, LOS RECOMIENDO 100000/10", nombre: "Loany C.", fuente: "Google" },
-  { texto: "Excelente servicio y la calidad de las piezas uff es buenisima. Súper recomendado este lugar 👌", nombre: "Ivraimobysh C.", fuente: "Google" },
-  { texto: "Es un lugar muy bien ambientado y enfocado en el servicio que ofrece, 10/10 y volvería sin dudarlo", nombre: "Nixia A.", fuente: "Google" },
-  { texto: "La rapidez con la que te realizan el trabajo y la facilidad de pago un 10/10", nombre: "Orlando I.", fuente: "Google" },
-  { texto: "Siempre me ha dejando un trabajo bien hecho y en buenas condiciones", nombre: "Genesis C.", fuente: "Google" },
-  { texto: "super cómodo y rápido, los mejores sin duda 😌.", nombre: "Ariana M.", fuente: "Google" },
+  { texto: "EXCELENTE TRABAJO, MUY AMABLE EL PERSONAL, MI CARRO QUEDO SIN FALLA, LOS RECOMIENDO 100000/10", nombre: "Loany C.", estrellas: 5, fuente: "Google" },
+  { texto: "Excelente servicio y la calidad de las piezas uff es buenisima. Súper recomendado este lugar 👌", nombre: "Ivraimobysh C.", estrellas: 5, fuente: "Google" },
+  { texto: "Es un lugar muy bien ambientado y enfocado en el servicio que ofrece, 10/10 y volvería sin dudarlo", nombre: "Nixia A.", estrellas: 5, fuente: "Google" },
+  { texto: "La rapidez con la que te realizan el trabajo y la facilidad de pago un 10/10", nombre: "Orlando I.", estrellas: 5, fuente: "Google" },
+  { texto: "Siempre me ha dejando un trabajo bien hecho y en buenas condiciones", nombre: "Genesis C.", estrellas: 5, fuente: "Google" },
+  { texto: "super cómodo y rápido, los mejores sin duda 😌.", nombre: "Ariana M.", estrellas: 5, fuente: "Google" },
+  { texto: "Rapidez y eficiencia", nombre: "Lourdes C.", estrellas: 5, fuente: "Google" },
+  { texto: "Muy buen servicio y amables", nombre: "Kamila S.", estrellas: 5, fuente: "Google" },
+  { texto: "Muy buen servicio", nombre: "Gerson G.", estrellas: 5, fuente: "Google" },
 ];
