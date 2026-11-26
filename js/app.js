@@ -8,6 +8,7 @@
     flexibles: 'Flexibles',
     escape: 'Escape',
     resonadores: 'Resonadores',
+    fabricacion: 'Fabricación',
     maquinaria: 'Maquinaria pesada',
     otros: 'Otros'
   };
@@ -228,7 +229,7 @@
         return '<figure class="' + cls + '" data-cat="' + cat + '">' +
           '<button type="button" class="g-btn" data-i="' + i + '" aria-label="' + esc(etiqueta + t.titulo) + '">' +
           '<span class="g-img"><img src="' + esc(t.foto) + '"' +
-          (juegoFotos(t.foto) ? ' srcset="' + esc(juegoFotos(t.foto)) + '" sizes="(max-width:760px) 100vw, (max-width:980px) 50vw, 400px"' : '') +
+          (juegoFotos(t.foto) ? ' srcset="' + esc(juegoFotos(t.foto)) + '" sizes="(max-width:760px) 50vw, (max-width:980px) 33vw, 300px"' : '') +
           ' alt="' + esc(t.titulo) + '" loading="lazy" decoding="async">' +
           (t.video ? '<span class="g-play">' + PLAY + 'Video</span>' : '') + '</span>' +
           '</button>' +
