@@ -114,7 +114,11 @@ html{scrollbar-color:var(--steel-4) var(--steel);accent-color:var(--gold)}
 .hero-copy{display:grid;gap:1.5rem;justify-items:start}
 .hero h1{display:grid;gap:1.1rem}
 .h1-sub{display:block;font-family:var(--f-body);font-stretch:75%;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.25;color:var(--gold);max-width:30ch}
-.display{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(3.4rem,8vw,7.4rem);line-height:.86;letter-spacing:.005em;color:#F6F1E8}
+.display{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(3.4rem,7vw,6.6rem);line-height:.84;letter-spacing:-.005em;color:#F6F1E8}
+.display .ln{display:block}
+/* la palabra que importa va mas grande: el titulo se lee como un rotulo de taller */
+.display .ln-big{font-size:1.62em;line-height:.8;margin-block:.02em .04em}
+.display .ln-big em::after{bottom:-.07em;height:.07em}
 .display em{color:var(--gold);display:inline-block;position:relative}
 .display em::after{content:"";position:absolute;left:.04em;right:.04em;bottom:.06em;height:.09em;background:var(--red-l);transform:skewX(-20deg)}
 .hero .lead{font-size:clamp(1.1rem,1.8vw,1.25rem);max-width:42ch;color:var(--muted-d)}
@@ -140,6 +144,17 @@ html{scrollbar-color:var(--steel-4) var(--steel);accent-color:var(--gold)}
 .facts strong{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.65rem;line-height:1;letter-spacing:.01em;color:#F6F1E8}
 .facts span{color:var(--muted-d);font-size:1rem;line-height:1.5;max-width:34ch}
 
+/* hero en escritorio: la foto llega hasta el borde derecho y ocupa todo el alto */
+@media (min-width:981px){
+  .hero-in{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);padding-block:0;align-items:stretch;min-height:min(calc(100svh - var(--nav-h) - 9rem),720px)}
+  .hero-copy{align-content:center;padding-block:clamp(2.5rem,5vw,4.5rem)}
+  .hero-art{max-width:none;justify-self:stretch;margin-right:calc(-1 * (var(--gutter) + max(0px,(100vw - var(--max)) / 2)))}
+  .shot{--cut:34px;aspect-ratio:auto;height:100%;min-height:520px;clip-path:polygon(var(--cut) 0,100% 0,100% 100%,0 100%,0 var(--cut))}
+  .shot::after{background:linear-gradient(90deg,rgba(20,19,17,.55),transparent 28%),linear-gradient(180deg,transparent 60%,rgba(10,9,8,.5))}
+  .status{top:auto;bottom:2.2rem;left:-2.2rem}
+  .hero-in{margin-bottom:clamp(2rem,3.5vw,3rem)}
+}
+
 /* ---------- FOTOS: skeleton mientras cargan y aviso si fallan (lo activa js/app.js) ---------- */
 img.sk{background:linear-gradient(110deg,var(--sk-a) 30%,var(--sk-b) 50%,var(--sk-a) 70%) 0 0/250% 100%;color:transparent}
 @media (prefers-reduced-motion:no-preference){
@@ -160,7 +175,8 @@ img.sk{background:linear-gradient(110deg,var(--sk-a) 30%,var(--sk-b) 50%,var(--s
 .dark{background:var(--steel);color:#fff}
 .sec-head{display:grid;gap:1rem;margin-bottom:clamp(2.2rem,4vw,3.2rem);max-width:48rem;justify-items:start}
 .sec-head.center{text-align:center;margin-inline:auto;justify-items:center}
-.sec-head h2,.visit-info h2{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,6vw,4.6rem);line-height:.9;letter-spacing:.005em}
+.sec-head h2,.visit-info h2{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(2.8rem,6.4vw,5.4rem);line-height:.86;letter-spacing:-.005em}
+.sec-head h2 em,.visit-info h2 em{font-style:normal;display:inline-block}
 .sec-head h2 em,.visit-info h2 em{color:var(--red)}
 .dark .sec-head h2 em,.dark h2 em{color:var(--gold)}
 .sec-head p{color:var(--muted);font-size:1.1rem;max-width:58ch}
