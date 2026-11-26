@@ -61,6 +61,7 @@ html{scrollbar-color:var(--steel-4) var(--steel);accent-color:var(--gold)}
 .skip{position:absolute;left:12px;top:-80px;z-index:100;background:var(--gold);color:var(--ink);padding:.6rem 1rem;font-weight:600}
 .skip:focus{top:12px}
 .ico{width:1em;height:1em;fill:currentColor;flex-shrink:0}
+.sprite{position:absolute}
 
 /* placa con esquinas cortadas (se usa en fotos, tarjetas y botones) */
 .cut{clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}

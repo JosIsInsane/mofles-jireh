@@ -6,6 +6,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
 
 /img/*
   Cache-Control: public, max-age=2592000
@@ -17,3 +18,7 @@
   Cache-Control: public, max-age=0, must-revalidate
 /resenas.js
   Cache-Control: public, max-age=0, must-revalidate
+
+# La copia en pages.dev no debe salir en Google (la oficial es moflesjireh.com)
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
